@@ -1,0 +1,887 @@
+/* src/pages/BlogList.css */
+
+/* =========================
+   Tokens (ONLY used colors)
+========================= */
+.blogPage {
+  /* Brand */
+  --c-main-50: #f3effe;
+  --c-main-100: #dbccfc;
+  --c-main-600: #7c54e0;
+  --c-main-700: #6341af;
+  --c-main-800: #4c3387;
+  --c-main-900: #3a2767;
+
+  /* Yellow */
+  --c-yellow-50: #fffef9;
+  --c-yellow-100: #fffbee;
+  --c-yellow-600: #e7ddb5;
+
+  /* Gray */
+  --c-gray-50: #ebebeb;
+  --c-gray-100: #c0c0c0;
+  --c-gray-400: #5c5c5c;
+  --c-gray-600: #2e2e2e;
+  --c-gray-700: #242424;
+  --c-gray-800: #1c1c1c;
+
+  /* Neutral */
+  --c-white: #ffffff;
+
+  /* Error */
+  --c-danger: #b42318;
+  --c-danger-bg: #fff5f5;
+  --c-danger-border: #ffd3d3;
+  --c-danger-muted: #7a271a;
+
+  /* Alpha / RGBA */
+  --c-primary-focus-border: rgba(124, 84, 224, 0.55);
+  --c-primary-focus-ring: rgba(124, 84, 224, 0.15);
+
+  --c-primary-a12: rgba(124, 84, 224, 0.12);
+  --c-primary-a18: rgba(124, 84, 224, 0.18);
+  --c-primary-a22: rgba(124, 84, 224, 0.22);
+  --c-primary-a25: rgba(124, 84, 224, 0.25);
+  --c-primary-a35: rgba(124, 84, 224, 0.35);
+
+  --c-main-800-a35: rgba(76, 51, 135, 0.35);
+
+  --c-overlay: rgba(21, 21, 21, 0.55);
+  --c-sheet-shadow: rgba(58, 39, 103, 0.18);
+  --c-fab-shadow: rgba(21, 21, 21, 0.18);
+
+  --c-shadow-soft: rgba(217, 221, 229, 0.75);
+  --c-shadow-mid: rgba(176, 176, 176, 0.35);
+
+  /* UI semantic */
+  --bg: var(--c-white);
+  --surface: var(--c-white);
+  --surface-2: var(--c-yellow-50);
+
+  --border: var(--c-gray-50);
+  --border-2: var(--c-gray-100);
+
+  --text: var(--c-gray-800);
+  --muted: var(--c-gray-400);
+
+  --primary: var(--c-main-600);
+  --primary-hover: var(--c-main-700);
+  --primary-soft: var(--c-main-50);
+
+  /* Shadows (Figma spec: 1 1 7 0) */
+  --shadow-soft: 1px 1px 7px 0 var(--c-shadow-soft);
+  --shadow-mid: 1px 1px 7px 0 var(--c-shadow-mid);
+}
+
+/* Optional: inputs/selects look consistent (only inside this page) */
+.blogPage .form-control,
+.blogPage .form-select {
+  border-color: var(--border);
+}
+
+.blogPage .form-control:focus,
+.blogPage .form-select:focus {
+  border-color: var(--c-primary-focus-border);
+  box-shadow: 0 0 0 0.2rem var(--c-primary-focus-ring);
+}
+
+/* =========================
+   Layout
+========================= */
+.blogTop {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  margin-top: 60px;
+}
+
+.blogHeading {
+  font-size: 40px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--text);
+}
+
+.blogSub {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.blogHeaderLine {
+  margin-bottom: 12px;
+  color: var(--c-gray-600);
+}
+
+/* Sidebar */
+.blogSidebar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+  position: sticky;
+  top: 18px;
+}
+
+.sidebarTitle {
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.sidebarGroup {
+  margin-bottom: 12px;
+}
+
+.blogLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--c-gray-600);
+  margin-bottom: 6px;
+}
+
+.sidebarInfo {
+  background: var(--surface-2);
+  border: 1px dashed var(--border-2);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin: 12px 0;
+  font-size: 13px;
+  color: var(--c-gray-600);
+}
+
+.sidebarErr {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--c-danger);
+  background: var(--c-danger-bg);
+  border: 1px solid var(--c-danger-border);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.sidebarErrHint {
+  margin-top: 6px;
+  color: var(--c-danger-muted);
+  font-size: 12px;
+}
+
+/* Blog Cards */
+.blogList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.blogCard {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.blogThumb {
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--primary-soft);
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.col-lg-8 {
+  flex: 1;
+}
+
+.blogThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blogThumbPlaceholder {
+  width: 100%;
+  height: 100%;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 900;
+  color: var(--c-main-900);
+  background: linear-gradient(135deg, var(--c-main-100), var(--c-yellow-50));
+}
+
+.blogBody {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.blogMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.blogAuthor {
+  font-weight: 700;
+  color: var(--c-gray-600);
+}
+
+.blogDot {
+  opacity: 0.8;
+}
+
+.blogTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.blogExcerpt {
+  margin: 0;
+  color: var(--c-gray-600);
+  line-height: 1.6;
+}
+
+.blogTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.blogTag {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(99, 65, 175, .10);
+    color: rgba(99, 65, 175, .95);
+    border: 1px solid rgba(99, 65, 175, .18);
+    font-weight: 800;
+}
+
+.blogActions {
+  margin-top: 4px;
+}
+.blogCard{
+  position: relative;
+}
+/* View button */
+.blogReadMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 900;
+  color: rgba(99, 65, 175, 0.95);
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(99, 65, 175, 0.18);
+  background: rgba(255, 255, 255, 0.75);
+  transition: transform 0.16s ease, background 0.16s ease,
+    border-color 0.16s ease;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.blogReadMore:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(99, 65, 175, 0.28);
+  transform: translateY(-1px);
+}
+
+.blogReadMore svg {
+  transition: transform 0.16s ease;
+}
+
+.blogReadMore:hover svg {
+  transform: translateX(6px);
+}
+
+/* States + Pagination */
+.blogState {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  color: var(--c-gray-600);
+  box-shadow: var(--shadow-soft);
+}
+
+.blogError {
+  color: var(--c-danger);
+  background: var(--c-danger-bg);
+  border-color: var(--c-danger-border);
+}
+
+.blogPagination {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.blogPageInfo {
+  font-weight: 700;
+  color: var(--c-gray-600);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .blogSidebar {
+    position: static;
+  }
+
+  .blogCard {
+    grid-template-columns: 1fr;
+  }
+
+  .blogThumbPlaceholder {
+    min-height: 170px;
+  }
+}
+
+/* =========================
+   Active Filters Chips
+========================= */
+.blogActiveFilters {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--c-primary-a18);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.blogActiveFiltersLeft {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.blogActiveLabel {
+  font-weight: 600;
+  opacity: 0.85;
+  color: var(--c-gray-700);
+}
+
+.blogChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.blogChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--c-primary-a25);
+  background: var(--c-main-50);
+  cursor: pointer;
+}
+
+.blogChip:hover {
+  background: var(--c-main-100);
+}
+
+.blogChipText {
+  font-size: 13px;
+  color: var(--c-gray-700);
+}
+
+.blogChipX {
+  font-size: 16px;
+  line-height: 1;
+  opacity: 0.7;
+  color: var(--primary-hover);
+}
+
+/* =========================
+   Mobile Filters Drawer
+========================= */
+.blogSidebarDesktop {
+  display: block;
+}
+
+.blogMobileFiltersBar {
+  display: none;
+  margin-bottom: 12px;
+}
+
+.blogMobileFiltersBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-weight: 800;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: 0.2s;
+  color: var(--text);
+}
+
+.blogMobileFiltersBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-mid);
+}
+
+.blogMobileFiltersBadge {
+  min-width: 28px;
+  height: 22px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--c-white);
+  background: var(--primary);
+  padding: 0 8px;
+}
+
+.blogFiltersOverlay {
+  position: fixed;
+  inset: 0;
+  background: var(--c-overlay);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.blogFiltersSheet {
+  width: 100%;
+  max-width: 680px;
+  background: var(--surface);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  box-shadow: 0 -12px 30px var(--c-sheet-shadow);
+  overflow: hidden;
+  animation: sheetUp 0.18s ease-out;
+}
+
+@keyframes sheetUp {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.blogFiltersSheetHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--c-primary-a12);
+}
+
+.blogFiltersSheetHead h5 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.blogFiltersClose {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  border: 1px solid var(--c-primary-a22);
+  background: var(--surface);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.blogFiltersSheetBody {
+  max-height: 70vh;
+  overflow: auto;
+  padding: 12px 12px 0 12px;
+}
+
+/* Keep sidebar inside sheet without sticky/extra shadow */
+.blogFiltersSheetBody .blogSidebar {
+  position: static;
+  top: auto;
+  box-shadow: none;
+}
+
+.blogFiltersSheetFoot {
+  padding: 12px 16px 16px;
+  border-top: 1px solid var(--c-primary-a12);
+}
+
+.blogFiltersDone {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 0;
+  background: var(--primary);
+  color: var(--c-white);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.blogFiltersDone:hover {
+  background: var(--primary-hover);
+}
+
+/* =========================
+   Filters behavior
+========================= */
+
+/* Default (Desktop) */
+.blogSidebarDesktop {
+  display: block;
+}
+
+.blogMobileFiltersBar {
+  display: none;
+}
+
+/* Tablet + Mobile */
+@media (max-width: 992px) {
+  .blogSidebarDesktop {
+    display: none;
+  }
+
+  .blogMobileFiltersBar {
+    display: block;
+  }
+}
+
+/* Large screens only */
+@media (min-width: 992.01px) {
+  .blogSidebarDesktop {
+    position: sticky;
+    top: 18px;
+    align-self: flex-start;
+  }
+}
+
+@media (min-width: 768px) {
+  .blogSidebarDesktop {
+    position: sticky;
+    top: 10px;
+    align-self: flex-start;
+  }
+
+  .blogSidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 575px) {
+  .blogTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* Floating Action Button */
+.blogFab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+  background: var(--primary);
+  color: var(--c-white);
+  text-decoration: none;
+  font-weight: 900;
+  padding: 8px 12px;
+  border-radius: 999px;
+  box-shadow: 0 14px 30px var(--c-fab-shadow);
+}
+
+.blogFab:hover {
+  opacity: 0.92;
+  color: var(--c-white);
+  background: var(--primary-hover);
+}
+
+/* =========================
+   Bootstrap buttons override (Blog only)
+========================= */
+.blogPage .btn-outline-secondary {
+  border-color: var(--c-primary-a35);
+  color: var(--primary);
+}
+
+.blogPage .btn-outline-secondary:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--c-white);
+}
+
+.blogPage .btn-outline-danger {
+  border-color: var(--c-main-800-a35);
+  color: var(--c-main-800);
+}
+
+.blogPage .btn-outline-danger:hover {
+  background: var(--c-main-800);
+  border-color: var(--c-main-800);
+  color: var(--c-white);
+}
+
+/* =========================
+   Create button (match MyArticles)
+   Scoped to BlogList page
+========================= */
+.blogPage .myPrimaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 14px;
+
+  font-weight: 700;
+  color: var(--c-white);
+  background: linear-gradient(135deg, var(--c-main-600), var(--c-main-600));
+  /* لو بدك أقرب تمامًا للـ MyArticles (600 -> 500) بس ما عندك 500 هون
+     فخليتها 600 ثابتة. إذا بدك أضيف 500 خبرني. */
+
+  box-shadow: 0 10px 22px var(--c-primary-a25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.blogPage .myPrimaryBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px var(--c-primary-a25);
+}
+
+.blogPage .myPrimaryBtn:active {
+  transform: translateY(0px);
+  opacity: 0.92;
+}
+
+.blogPage .myPrimaryBtn svg {
+  font-size: 18px;
+}
+
+
+/* =========================
+   Dark mode safety (readability)
+   Covers common theme selectors
+========================= */
+body.dark .blogPage,
+body.dark-mode .blogPage,
+.dark .blogPage,
+[data-theme="dark"] .blogPage,
+html[data-theme="dark"] .blogPage {
+  --bg: #0b0b12;
+  --surface: #12121c;
+  --surface-2: rgba(255, 255, 255, 0.04);
+
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.70);
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-2: rgba(255, 255, 255, 0.12);
+
+  --shadow-soft: none;
+  --shadow-mid: none;
+}
+
+/* Ensure key texts follow semantic vars */
+.blogPage .blogSub,
+.blogPage .blogHeaderLine,
+.blogPage .blogMeta,
+.blogPage .blogAuthor,
+.blogPage .blogExcerpt,
+.blogPage .blogPageInfo,
+.blogPage .blogLabel,
+.blogPage .sidebarInfo,
+.blogPage .blogActiveLabel,
+.blogPage .blogChipText {
+  color: var(--muted) !important;
+}
+
+.blogPage .blogHeading,
+.blogPage .sidebarTitle,
+.blogPage .blogTitle,
+.blogPage .blogFiltersSheetHead h5 {
+  color: var(--text) !important;
+}
+
+/* Cards + surfaces follow variables */
+.blogPage {
+  background: var(--bg);
+}
+.blogPage .blogSidebar,
+.blogPage .blogCard,
+.blogPage .blogState,
+.blogPage .blogActiveFilters,
+.blogPage .blogMobileFiltersBtn,
+.blogPage .blogFiltersSheet {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+
+.g-4.row{
+  padding-bottom: 40px;
+}
+
+
+
+
+
+/* =========================
+   Blog Loading Skeleton
+   (Uses your theme tokens if موجودين)
+========================= */
+
+.blogSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.blogSkCard {
+  display: flex;
+  gap: 14px;
+  border: 1px solid var(--app-border);
+  background: var(--app-surface);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.blogSkThumb {
+  width: 220px;
+  min-width: 220px;
+  height: 160px;
+  position: relative;
+  background: rgba(0,0,0,0.06);
+}
+
+html[data-theme="dark"] .blogSkThumb {
+  background: rgba(255,255,255,0.08);
+}
+
+.blogSkBody {
+  padding: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.blogSkLine {
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+html[data-theme="dark"] .blogSkLine {
+  background: rgba(255,255,255,0.08);
+}
+
+.blogSkTags {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.blogSkPill {
+  width: 70px;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(124, 84, 224, 0.10);
+  border: 1px solid rgba(124, 84, 224, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.blogSkBtn {
+  width: 110px;
+  height: 34px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+html[data-theme="dark"] .blogSkBtn {
+  background: rgba(255,255,255,0.08);
+}
+
+/* shimmer layer */
+.blogSkShimmer {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-60%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(124, 84, 224, 0.20),
+    transparent
+  );
+  animation: blogSkMove 1.1s infinite;
+}
+
+@keyframes blogSkMove {
+  0% { transform: translateX(-60%); }
+  100% { transform: translateX(60%); }
+}
+
+/* widths helpers */
+.blogSkeleton .w25 { width: 25%; }
+.blogSkeleton .w40 { width: 40%; }
+.blogSkeleton .w70 { width: 70%; }
+.blogSkeleton .w80 { width: 80%; }
+.blogSkeleton .w90 { width: 90%; }
+
+/* responsive */
+@media (max-width: 768px) {
+  .blogSkCard {
+    flex-direction: column;
+  }
+  .blogSkThumb {
+    width: 100%;
+    min-width: 100%;
+    height: 180px;
+  }
+}

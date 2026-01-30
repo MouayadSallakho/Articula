@@ -1,0 +1,529 @@
+/* =========================
+   ContactUs.css (Scoped + Theme-ready)
+   Works with: --app-bg, --app-surface, --app-text, --app-muted, --app-border
+   + --brand-600, --brand-700
+========================= */
+
+/* Page-scope tokens (ONLY for Contact sections) */
+.holderGitIn,
+.OurBranches,
+.holderinfolocation {
+  /* theme mapping (with safe fallbacks) */
+  --c-surface: var(--app-surface, #ffffff);
+  --c-bg: var(--app-bg, #ffffff);
+  --c-text: var(--app-text, #1D2026);
+  --c-muted: var(--app-muted, #4E5566);
+  --c-border: var(--app-border, #E0E0E0);
+
+  --c-brand-700: var(--brand-700, #6341AF);
+  --c-brand-600: var(--brand-600, #7E54E0);
+  --c-soft: var(--brand-50, #F3EFFE);
+
+  --c-gold: #B4AD8D;
+
+  /* overlays */
+  --c-overlay-1: rgba(76, 51, 135, 0.35);
+  --c-overlay-2: rgba(76, 51, 135, 0.60);
+
+  /* hover gradient (existing idea) */
+  --c-btn-grad-1: #8250f5;
+  --c-btn-grad-2: #bca0f9;
+
+  /* shadows */
+  --c-shadow-white-glow: 0 0 13px 0px rgba(255, 255, 255, 0.85);
+  --c-shadow-soft: 0 0 8px 0px rgba(146, 160, 196, 0.55);
+}
+
+/* Slightly tweak overlays in dark for better readability */
+body.dark .holderGitIn,
+body.dark .OurBranches,
+body.dark .holderinfolocation {
+  --c-overlay-1: rgba(0, 0, 0, 0.45);
+  --c-overlay-2: rgba(0, 0, 0, 0.55);
+}
+
+/* =========================================
+   GetIn (Slider)
+========================================= */
+
+.GetIn {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url(../assets/images/tatch-phonw.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  color: #fff;
+}
+
+.GetIn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--c-overlay-1);
+  z-index: -1;
+}
+
+.GetIn h4 {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 57px;
+  line-height: 140%;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.GetIn p {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 140%;
+  color: #fff;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.GetIn button {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #fff;
+
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  background-color: var(--c-brand-700);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.GetIn button:hover {
+  box-shadow: var(--c-shadow-white-glow);
+  background: linear-gradient(to right, var(--c-btn-grad-1), var(--c-btn-grad-2));
+  transform: translateY(-2px);
+}
+
+.holderGitIn .swiper {
+  padding-bottom: 40px;
+}
+
+.holderGitIn .GetIn .swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+}
+
+.holderGitIn .swiper-pagination-bullet-active {
+  background: none;
+  outline: 4px solid var(--c-brand-700);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .GetIn h4 {
+    font-size: 40px;
+  }
+  .GetIn p {
+    font-size: 22px;
+  }
+}
+
+/* =========================================
+   OurBranches Head
+========================================= */
+
+.OurBranches {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: var(--c-bg);
+  color: var(--c-text);
+}
+
+.OurBranches .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.OurBranches .head div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.OurBranches .head div svg,
+.OurBranches .head div .nav-link {
+  color: var(--c-brand-600);
+}
+
+.OurBranches .head div .nav-link {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  margin-right: 20px;
+  padding: 0;
+}
+
+.OurBranches .head div p {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--c-muted);
+  margin: 0;
+}
+
+.OurBranches .head h2 {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 140%;
+  color: var(--c-text);
+  margin: 0;
+}
+
+.OurBranches .head h2 span {
+  position: relative;
+}
+
+.OurBranches .head h2 span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--c-brand-700);
+  bottom: -8px;
+  left: 0;
+  border-radius: 999px;
+}
+
+@media (max-width: 992px) {
+  .OurBranches .head {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .OurBranches .head h2 {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 485px) {
+  .OurBranches .head div {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+}
+
+/* =========================================
+   OurBranchess slider/cards
+========================================= */
+
+.HolderOurBranchess {
+  padding-top: 40px;
+}
+
+.HolderOurBranchess .swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.HolderOurBranchess .swiper .swiper-slide .BBox {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.HolderOurBranchess .swiper .swiper-slide .BBox img {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+}
+
+/* Ribbon */
+.HolderOurBranchess .swiper .swiper-slide .BBox img + div {
+  position: absolute;
+  padding: 14px 45px;
+  background-color: var(--c-brand-600);
+  color: #fff;
+  top: 50px;
+  left: 0;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.HolderOurBranchess .swiper .swiper-slide .BBox img + div p {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  margin: 0;
+}
+
+/* Hover overlay content */
+.HolderOurBranchess .swiper .swiper-slide .BBox img + div + div {
+  position: absolute;
+  padding: 20px;
+  text-align: center;
+  background-color: var(--c-overlay-2);
+  color: #fff;
+  bottom: -140px;
+  left: 0;
+  right: 0;
+  transition: 0.35s ease;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.HolderOurBranchess .swiper .swiper-slide .BBox:hover img + div + div {
+  bottom: 0;
+}
+
+.HolderOurBranchess .swiper .swiper-slide .BBox img + div + div p {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 140%;
+  color: var(--c-soft);
+  margin: 0;
+}
+
+@media (max-width: 575px) {
+  .HolderOurBranchess .swiper .swiper-slide .BBox img + div {
+    padding: 14px 15px;
+  }
+  .HolderOurBranchess .swiper .swiper-slide .BBox img + div p {
+    font-size: 17px;
+  }
+}
+
+/* =========================================
+   Location + Form section (Locationsend)
+========================================= */
+
+.holderinfolocation {
+  padding-top: 60px;
+  background: var(--c-bg);
+  color: var(--c-text);
+}
+
+@media (max-width: 992px) {
+  .holderinfolocation .left {
+    margin-bottom: 30px;
+  }
+  .holderinfolocation .right iframe {
+    min-height: 300px;
+  }
+}
+
+.holderinfolocation .left h3 {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 57px;
+  line-height: 140%;
+  color: var(--c-text);
+  margin-bottom: 10px;
+}
+
+.holderinfolocation .left h3 + p {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--c-muted);
+  margin-bottom: 20px;
+}
+
+/* inputs */
+.holderinfolocation .left .fullName {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.holderinfolocation .left .fullName div {
+  width: 100%;
+}
+
+.holderinfolocation .left .subject,
+.holderinfolocation .left .email,
+.holderinfolocation .left .fullName {
+  margin-bottom: 15px;
+}
+
+.holderinfolocation .left .subject input,
+.holderinfolocation .left .email input,
+.holderinfolocation .left .fullName .lastname input,
+.holderinfolocation .left .fullName .firstname input {
+  width: 100%;
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text);
+  padding: 10px 12px;
+  border-radius: 10px;
+  outline: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.holderinfolocation .left input::placeholder {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--c-muted) 75%, transparent);
+  transition: opacity 0.2s ease;
+}
+
+.holderinfolocation .left input:focus::placeholder {
+  opacity: 0;
+}
+
+.holderinfolocation .left .subject input:focus,
+.holderinfolocation .left .email input:focus,
+.holderinfolocation .left .fullName .lastname input:focus,
+.holderinfolocation .left .fullName .firstname input:focus,
+.holderinfolocation .left .text textarea:focus {
+  border-color: color-mix(in srgb, var(--c-brand-600) 55%, var(--c-border));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--c-brand-600) 18%, transparent);
+}
+
+/* Required star (more stable than left:83px) */
+.holderinfolocation .left .email,
+.holderinfolocation .left .fullName .lastname,
+.holderinfolocation .left .fullName .firstname {
+  position: relative;
+}
+
+.holderinfolocation .left .email::after,
+.holderinfolocation .left .fullName .lastname::after,
+.holderinfolocation .left .fullName .firstname::after {
+  content: "*";
+  position: absolute;
+  top: 10px;
+  inset-inline-end: 12px;
+  color: #ff3b30;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.holderinfolocation .left .email:focus-within::after,
+.holderinfolocation .left .fullName .lastname:focus-within::after,
+.holderinfolocation .left .fullName .firstname:focus-within::after {
+  opacity: 0;
+}
+
+.holderinfolocation .left .formSelect {
+  margin-bottom: 15px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--c-text);
+}
+
+/* textarea */
+.holderinfolocation .left .text textarea {
+  width: 100%;
+  display: block;
+  min-height: 120px;
+  margin-bottom: 15px;
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  outline: none;
+  resize: vertical;
+}
+
+/* submit */
+.holderinfolocation .left .text + button {
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: uppercase;
+
+  color: #fff;
+  background-color: var(--c-brand-600);
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.holderinfolocation .left .text + button:hover {
+  box-shadow: var(--c-shadow-soft);
+  transform: translateY(-3px);
+  filter: brightness(0.98);
+}
+
+/* info row */
+.holderinfolocation .left .ourinfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .holderinfolocation .left .ourinfo {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+.holderinfolocation .left .ourinfo .info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.holderinfolocation .left .ourinfo .info svg {
+  font-size: 20px;
+  color: var(--c-gold);
+}
+
+.holderinfolocation .left .ourinfo .info p {
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--c-text);
+  margin: 0;
+}
+
+.holderinfolocation .left .ourinfo .info span {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--c-muted);
+}
+
+/* Map */
+.holderinfolocation .right iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 18px;
+}
+
+/* IMPORTANT: removed global iframe selector to avoid affecting other pages */

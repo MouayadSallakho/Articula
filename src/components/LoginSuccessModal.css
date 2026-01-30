@@ -1,0 +1,49 @@
+.lsmOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.lsmCard {
+  width: min(520px, 94vw);
+  border-radius: 18px;
+  padding: 18px 16px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(90deg, #6a43c3, #8a5cf6);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+  animation: lsmPop 160ms ease-out;
+}
+
+@keyframes lsmPop {
+  from { transform: translateY(6px); opacity: 0.7; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.lsmIcon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 10px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  background: rgba(229, 188, 66, 0.95);
+  color: #2a1b00;
+}
+
+.lsmTitle {
+  margin: 0 0 6px;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.lsmText {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 14px;
+}

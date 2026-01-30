@@ -1,0 +1,313 @@
+/* src/styles/theme.css */
+
+/* =========================
+   Global Theme Tokens
+========================= */
+:root {
+
+
+  --logo-card-bg: #ffffff;
+  --logo-card-border: rgba(17, 24, 39, 0.10);
+
+
+
+  /* Brand palette (ثابتة بالـ light والـ dark عادة) */
+  --brand-50: #f3effe;
+  --brand-600: #7c54e0;
+  --brand-700: #6341af;
+  --brand-800: #4c3387;
+  --brand-900: #3a2767;
+  --brand-950: #2f1f58;
+
+  /* Yellow palette */
+  --yellow-50: #fffef9;
+  --yellow-500: #fef3c7;
+
+  /* Grays */
+  --gray-800: #1c1c1c;
+
+  /* Semantic (Light Mode) */
+  --app-bg: #ffffff;
+  --app-surface: #ffffff;
+  /* cards / panels */
+  --app-surface-2: rgba(255, 255, 255, 0.78);
+  /* glass panels */
+  --app-text: rgba(17, 24, 39, 0.95);
+  --app-muted: rgba(17, 24, 39, 0.60);
+  --app-border: rgba(17, 24, 39, 0.10);
+
+  /* Overlays / whites */
+  --white-95: rgba(255, 255, 255, 0.95);
+  --white-92: rgba(255, 255, 255, 0.92);
+  --white-90: rgba(255, 255, 255, 0.90);
+  --white-85: rgba(255, 255, 255, 0.85);
+  --white-75: rgba(255, 255, 255, 0.75);
+  --white-72: rgba(255, 255, 255, 0.72);
+  --white-70: rgba(255, 255, 255, 0.70);
+  --white-45: rgba(255, 255, 255, 0.45);
+  --white-35: rgba(255, 255, 255, 0.35);
+  --white-16: rgba(255, 255, 255, 0.16);
+  --white-12: rgba(255, 255, 255, 0.12);
+  --white-10: rgba(255, 255, 255, 0.10);
+  --white-06: rgba(255, 255, 255, 0.06);
+
+  /* Accents / purple borders */
+  --purple-600-18: rgba(124, 84, 224, 0.18);
+  --purple-600-16: rgba(124, 84, 224, 0.16);
+  --purple-600-14: rgba(124, 84, 224, 0.14);
+
+  /* Danger */
+  --danger-solid: #d92b4c;
+  --danger-16: rgba(239, 68, 68, 0.16);
+  --danger-22: rgba(239, 68, 68, 0.22);
+  --danger-32: rgba(239, 68, 68, 0.32);
+
+  /* Shadows */
+  --shadow-soft: 1px 1px 7px 0 rgba(217, 221, 229, 0.75);
+  --shadow-hero: 0 18px 50px rgba(58, 39, 103, 0.25);
+  --shadow-dialog: 0 24px 60px rgba(15, 0, 51, 0.25);
+  --shadow-panel: 0 14px 40px rgba(17, 24, 39, 0.08);
+
+  /* Overlay */
+  --overlay-dark-45: rgba(19, 8, 56, 0.45);
+
+  /* Radius */
+  --r12: 12px;
+  --r14: 14px;
+  --r16: 16px;
+  --r18: 18px;
+  --r22: 22px;
+
+
+
+  --tt-track-bg: linear-gradient(90deg, rgba(99, 65, 175, 0.18), rgba(139, 92, 246, 0.18));
+  --tt-track-border: rgba(99, 65, 175, 0.18);
+
+  --tt-knob-bg: linear-gradient(135deg, var(--brand-700), var(--brand-600));
+  --tt-knob-fg: rgba(255, 255, 255, 1);
+  --tt-knob-shadow: 0 10px 18px rgba(99, 65, 175, 0.22);
+
+  --tt-track-bg-dark: linear-gradient(90deg, rgba(254, 243, 199, 0.22), rgba(99, 65, 175, 0.16));
+  --tt-track-border-dark: rgba(254, 243, 199, 0.35);
+
+  --tt-knob-bg-dark: rgba(254, 243, 199, 0.95);
+  --tt-knob-fg-dark: #5a3c00;
+  --tt-knob-shadow-dark: 0 10px 18px rgba(254, 243, 199, 0.22);
+
+  --tt-focus-ring: 0 0 0 3px rgba(124, 84, 224, 0.28);
+
+
+  /* =========================
+     Swiper bullets (global tokens)
+  ========================= */
+  --swiper-bullet: rgba(17, 24, 39, 0.35);
+  --swiper-bullet-active: rgba(17, 24, 39, 0.85);
+  --swiper-bullet-opacity: 1;
+  --swiper-bullet-opacity-active: 1;
+
+  /* =========================
+     Footer token mapping (Light)
+  ========================= */
+  --footer-bg: var(--brand-900);
+  --text-muted: rgba(255, 255, 255, 0.70);
+  --surface-glass: rgba(255, 255, 255, 0.10);
+  --accent-yellow-500: var(--yellow-500);
+  --accent-yellow-400: rgba(254, 243, 199, 0.92);
+  --shadow-accent: 0px 6px 20px 0px rgba(204, 82, 43, 0.50);
+  --color-white: rgba(255, 255, 255, 1);
+  --text-dark: rgba(17, 24, 39, 0.95);
+
+  /* Social brand colors (if your footer uses them) */
+  --brand-facebook: #1877f2;
+  --brand-instagram: #e4405f;
+  --brand-linkedin: #0a66c2;
+  --brand-twitter: #1da1f2;
+  --brand-whatsapp: #25d366;
+
+  /* =========================
+     ThemeToggle tokens (Light)
+  ========================= */
+  --tt-track-bg: linear-gradient(90deg, rgba(99, 65, 175, 0.18), rgba(139, 92, 246, 0.18));
+  --tt-track-border: rgba(99, 65, 175, 0.18);
+
+  --tt-knob-bg: linear-gradient(135deg, var(--brand-700), var(--brand-600));
+  --tt-knob-fg: rgba(255, 255, 255, 1);
+  --tt-knob-shadow: 0 10px 18px rgba(99, 65, 175, 0.22);
+
+  --tt-track-bg-dark: linear-gradient(90deg, rgba(254, 243, 199, 0.22), rgba(99, 65, 175, 0.16));
+  --tt-track-border-dark: rgba(254, 243, 199, 0.35);
+
+  --tt-knob-bg-dark: rgba(254, 243, 199, 0.95);
+  --tt-knob-fg-dark: rgba(90, 60, 0, 1);
+  --tt-knob-shadow-dark: 0 10px 18px rgba(254, 243, 199, 0.22);
+
+  --tt-focus-ring: 0 0 0 3px rgba(124, 84, 224, 0.28);
+
+
+
+
+  /* extra brand steps needed in Jobs gradients */
+  --brand-200: #cab4fb;
+  --brand-500: #8b5cf6;
+
+  /* legacy aliases used by some pages (like Jops.css) */
+  --main-50: var(--brand-50);
+  --main-200: var(--brand-200);
+  --main-500: var(--brand-500);
+
+  --categories-link: var(--brand-600);
+  --footer-bg: var(--brand-700);
+
+  --hero-title: #1D2026;
+  --hero-desc: #4E5566;
+  --text-dark: #242424;
+
+  --breadcrumb-muted: #6E7485;
+  --gray-300: #767676;
+  --gray-200: #A1A1A1;
+
+  --btn-glow: #b69cf3;
+
+  --join-title: #224A3B;
+  --join-text: #4E6E62;
+
+  --perk-bg: #f8f6ff;
+  --perk-shadow: #e2e2e2;
+
+  /* ThemeToggle tokens */
+  --tt-track-bg: linear-gradient(90deg, rgba(99, 65, 175, 0.18), rgba(139, 92, 246, 0.18));
+  --tt-track-border: rgba(99, 65, 175, 0.18);
+  --tt-knob-bg: linear-gradient(135deg, var(--brand-700), var(--brand-600));
+  --tt-knob-color: #ffffff;
+  --tt-knob-shadow: 0 10px 18px rgba(99, 65, 175, 0.22);
+
+  --tt-track-bg-active: linear-gradient(90deg, rgba(254, 243, 199, 0.22), rgba(99, 65, 175, 0.16));
+  --tt-track-border-active: rgba(254, 243, 199, 0.35);
+  --tt-knob-bg-active: rgba(254, 243, 199, 0.95);
+  --tt-knob-color-active: #5a3c00;
+  --tt-knob-shadow-active: 0 10px 18px rgba(254, 243, 199, 0.22);
+
+  --tt-focus-ring: rgba(124, 84, 224, 0.28);
+
+
+
+
+
+}
+
+/* =========================
+   Dark Mode Overrides
+   (ThemeToggle adds: body.dark)
+========================= */
+body[data-theme="dark"],
+body.dark {
+
+
+  --logo-card-bg: rgba(255, 255, 255, 0.92);
+  --logo-card-border: rgba(255, 255, 255, 0.14);
+
+
+  /* Semantic (Dark Mode) */
+  --app-bg: #0b0814;
+  /* background */
+  --app-surface: #120d22;
+  /* cards */
+  --app-surface-2: rgba(18, 13, 34, 0.75);
+  /* glass panels */
+  --app-text: rgba(255, 255, 255, 0.92);
+  --app-muted: rgba(255, 255, 255, 0.65);
+  --app-border: rgba(255, 255, 255, 0.12);
+
+  /* Whites become “light overlays” in dark */
+  --white-95: rgba(255, 255, 255, 0.12);
+  --white-92: rgba(255, 255, 255, 0.10);
+  --white-90: rgba(255, 255, 255, 0.10);
+  --white-85: rgba(255, 255, 255, 0.10);
+  --white-75: rgba(255, 255, 255, 0.08);
+  --white-72: rgba(255, 255, 255, 0.08);
+  --white-70: rgba(255, 255, 255, 0.08);
+  --white-45: rgba(255, 255, 255, 0.12);
+  --white-35: rgba(255, 255, 255, 0.14);
+  --white-16: rgba(255, 255, 255, 0.10);
+  --white-12: rgba(255, 255, 255, 0.10);
+  --white-10: rgba(255, 255, 255, 0.08);
+  --white-06: rgba(255, 255, 255, 0.06);
+
+  /* Purple borders slightly brighter for dark */
+  --purple-600-18: rgba(124, 84, 224, 0.28);
+  --purple-600-16: rgba(124, 84, 224, 0.24);
+  --purple-600-14: rgba(124, 84, 224, 0.20);
+
+  /* Shadows darker */
+  --shadow-soft: 0 16px 44px rgba(0, 0, 0, 0.35);
+  --shadow-hero: 0 18px 50px rgba(0, 0, 0, 0.35);
+  --shadow-dialog: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --shadow-panel: 0 16px 46px rgba(0, 0, 0, 0.28);
+
+  /* Overlay stronger */
+  --overlay-dark-45: rgba(0, 0, 0, 0.55);
+
+
+
+
+  /* Swiper bullets (Dark) */
+  --swiper-bullet: rgba(255, 255, 255, 0.35);
+  --swiper-bullet-active: rgba(255, 255, 255, 1);
+  --swiper-bullet-opacity: 1;
+  --swiper-bullet-opacity-active: 1;
+
+  /* Footer token mapping (Dark) */
+  --footer-bg: var(--app-bg);
+  --text-muted: rgba(255, 255, 255, 0.70);
+  --surface-glass: rgba(255, 255, 255, 0.08);
+  --accent-yellow-500: var(--yellow-500);
+  --accent-yellow-400: rgba(255, 255, 255, 1);
+  --shadow-accent: 0px 6px 20px 0px rgba(204, 82, 43, 0.50);
+  --color-white: rgba(255, 255, 255, 1);
+  --text-dark: rgba(17, 24, 39, 0.95);
+
+
+  /* Jobs aliases on dark */
+  --main-50: var(--app-bg);
+  --hero-title: var(--app-text);
+  --hero-desc: var(--app-muted);
+  --text-dark: var(--app-text);
+
+  --breadcrumb-muted: var(--app-muted);
+  --gray-300: rgba(255, 255, 255, 0.70);
+  --gray-200: rgba(255, 255, 255, 0.55);
+
+  --join-title: var(--app-text);
+  --join-text: var(--app-muted);
+
+  --perk-bg: var(--app-surface);
+  --perk-shadow: rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   Global body baseline
+========================= */
+html,
+body {
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+/* =========================
+   Global Swiper pagination (safe)
+========================= */
+.swiper-pagination-bullet {
+  background: var(--swiper-bullet) !important;
+  opacity: var(--swiper-bullet-opacity) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #FFFFFF !important;
+  opacity: var(--swiper-bullet-opacity-active) !important;
+}

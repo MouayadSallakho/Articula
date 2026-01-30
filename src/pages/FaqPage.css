@@ -1,0 +1,317 @@
+/* =========================================
+   FAQ Page (Scoped)
+   Uses theme.css tokens:
+   --app-bg, --app-surface, --app-text, --app-muted, --app-border
+   --brand-50, --brand-600, --brand-700, --yellow-500
+========================================= */
+
+.FAQHERO {
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+/* ---------- Breadcrumb ---------- */
+.FAQHERO .path-The-Page {
+  background-color: var(--brand-50);
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--app-border);
+}
+
+.FAQHERO .path-The-Page .breadcrumb {
+  margin-bottom: 0;
+}
+
+.FAQHERO .bread-item a {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  color: var(--app-muted) !important;
+  text-decoration: none;
+}
+
+.FAQHERO .breadcrumb .active {
+  color: var(--app-text);
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+}
+
+/* Dark mode fix for breadcrumb bar */
+body.dark .FAQHERO .path-The-Page {
+  background: var(--app-surface);
+  /* أو var(--app-bg) */
+  border-bottom: 1px solid var(--app-border);
+}
+
+/* ---------- Page spacing ---------- */
+.FAQHERO .Fillter {
+  padding: 50px 0 50px;
+}
+
+/* Titles */
+.FAQHERO .Fillter h3 {
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 140%;
+  color: var(--app-text);
+  margin-bottom: 14px;
+}
+
+/* ---------- Left: Categories Card ---------- */
+.FAQHERO .faq-category-list {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.FAQHERO .faq-category-item {
+  padding: 12px 14px;
+  cursor: pointer;
+
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+
+  color: var(--app-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+
+  transition: 0.2s ease;
+  user-select: none;
+}
+
+.FAQHERO .faq-category-item:hover {
+  background: rgba(124, 84, 224, 0.10);
+  /* brand tint */
+  border-color: rgba(124, 84, 224, 0.18);
+  color: var(--app-text);
+}
+
+.FAQHERO .faq-category-item.active-category {
+  background: var(--brand-700);
+  border-color: var(--brand-700);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- Right: Accordion Card ---------- */
+.FAQHERO .faq-accordion-wrap {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 16px;
+  padding: 12px;
+}
+
+/* Bootstrap accordion overrides (scoped) */
+.FAQHERO .accordion {
+  --bs-accordion-bg: transparent;
+  --bs-accordion-border-color: var(--app-border);
+  --bs-accordion-border-radius: 14px;
+
+  --bs-accordion-btn-color: var(--app-text);
+  --bs-accordion-btn-bg: transparent;
+
+  --bs-accordion-active-color: var(--app-text);
+  --bs-accordion-active-bg: rgba(124, 84, 224, 0.10);
+
+  --bs-accordion-body-padding-x: 16px;
+  --bs-accordion-body-padding-y: 14px;
+}
+
+/* Item look */
+.FAQHERO .accordion-item {
+  background: transparent;
+  border: 1px solid var(--app-border);
+  border-radius: 14px !important;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.FAQHERO .accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Header button */
+.FAQHERO .accordion-button {
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+
+  padding: 14px 16px;
+  box-shadow: none !important;
+  border: 0;
+}
+
+.FAQHERO .accordion-button:hover {
+  background: rgba(124, 84, 224, 0.08);
+}
+
+.FAQHERO .accordion-button:not(.collapsed) {
+  background: rgba(124, 84, 224, 0.10);
+}
+
+/* Body */
+.FAQHERO .accordion-body {
+  color: var(--app-muted);
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ---------- Custom Arrow (purple circle + white chevron) ---------- */
+.FAQHERO .accordion-button::after {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+
+  background-color: var(--brand-700);
+  background-size: 12px 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* white chevron down */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+}
+
+.FAQHERO .accordion-button:not(.collapsed)::after {
+  transform: rotate(180deg);
+}
+
+/* ---------- Small polish ---------- */
+.FAQHERO .accordion-button:focus {
+  box-shadow: 0 0 0 3px rgba(124, 84, 224, 0.25) !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+  .FAQHERO .Fillter {
+    padding: 20px 0 40px;
+  }
+
+  /* categories become horizontal scroll */
+  .FAQHERO .faq-category-list {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    white-space: nowrap;
+  }
+
+  .FAQHERO .faq-category-item {
+    flex: 0 0 auto;
+  }
+
+  .FAQHERO .faq-accordion-wrap {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .FAQHERO .bread-item a,
+  .FAQHERO .breadcrumb .active {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+/* ---------- Loading Skeleton (FAQ) ---------- */
+.FAQHERO .faq-skel-card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.FAQHERO .faq-skel-line {
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+html[data-theme="dark"] .FAQHERO .faq-skel-line {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.FAQHERO .faq-skel-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-60%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(124, 84, 224, 0.18),
+    transparent
+  );
+  animation: faqShimmer 1.1s infinite;
+}
+
+@keyframes faqShimmer {
+  0% { transform: translateX(-60%); }
+  100% { transform: translateX(60%); }
+}
+
+.FAQHERO .faq-skel-acc {
+  border: 1px solid var(--app-border);
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.FAQHERO .faq-skel-acc:last-child {
+  margin-bottom: 0;
+}
+
+.FAQHERO .faq-skel-accHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.FAQHERO .faq-skel-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--brand-700);
+  opacity: 0.9;
+}
+
+.FAQHERO .faq-skel-accBody {
+  margin-top: 12px;
+}
+
+/* widths helpers */
+.FAQHERO .w60 { width: 60%; }
+.FAQHERO .w70 { width: 70%; }
+.FAQHERO .w75 { width: 75%; }
+.FAQHERO .w80 { width: 80%; }
+.FAQHERO .w85 { width: 85%; }
+.FAQHERO .w88 { width: 88%; }
+.FAQHERO .w90 { width: 90%; }

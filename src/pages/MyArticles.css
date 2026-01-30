@@ -1,0 +1,1102 @@
+/* src/pages/MyArticles.css */
+
+.myArticlesPage {
+  /* ====== Colors (ONLY used) ====== */
+  --white: #ffffff;
+
+  /* Primary (purple) */
+  --primary-50: #f3effe;
+  --primary-500: #8b5cf6;
+  --primary-600: #7c54e0;
+  --primary-700: #6341af;
+  --primary-900: #3a2767;
+
+  /* Yellow */
+  --yellow-50: #fffef9;
+  --yellow-100: #fffbee;
+  --yellow-500: #fef3c7;
+  --yellow-600: #e7ddb5;
+
+  /* Grays */
+  --gray-400: #5c5c5c;
+  --gray-600: #2e2e2e;
+  --gray-700: #242424;
+  --gray-800: #1c1c1c;
+
+  /* Danger */
+  --danger-500: #ef4444;
+  --danger-700: #b91c1c;
+  --danger-800: #991b1b;
+
+  /* Semantic */
+  --surface: var(--white);
+  --surface-2: var(--yellow-50);
+  --text: var(--gray-800);
+  --muted: var(--gray-400);
+
+  /* ====== Alpha / rgba tokens ====== */
+  --primary-a12: rgba(124, 84, 224, 0.12);
+  --primary-a14: rgba(124, 84, 224, 0.14);
+  --primary-a16: rgba(124, 84, 224, 0.16);
+  --primary-a18: rgba(124, 84, 224, 0.18);
+  --primary-a22: rgba(124, 84, 224, 0.22);
+  --primary-a25: rgba(124, 84, 224, 0.25);
+  --primary-a28: rgba(124, 84, 224, 0.28);
+
+  --danger-a06: rgba(239, 68, 68, 0.06);
+  --danger-a14: rgba(239, 68, 68, 0.14);
+  --danger-a20: rgba(239, 68, 68, 0.2);
+  --danger-a28: rgba(239, 68, 68, 0.28);
+
+  --yellow-a55: rgba(254, 243, 199, 0.55);
+
+  --overlay-dark: rgba(21, 21, 21, 0.55);
+  --deep-shadow: rgba(58, 39, 103, 0.18);
+
+  /* ====== Shadows (colors also vars) ====== */
+  --shadow-soft-color: rgba(217, 221, 229, 0.75);
+  --shadow-mid-color: rgba(176, 176, 176, 0.35);
+  --card-shadow-color: rgba(217, 221, 229, 0.65);
+  --hover-shadow-color: rgba(176, 176, 176, 0.22);
+
+  --shadow-soft: 1px 1px 7px 0 var(--shadow-soft-color);
+  --shadow-mid: 1px 1px 7px 0 var(--shadow-mid-color);
+
+  --btn-shadow: 0 10px 22px var(--primary-a25);
+  --btn-shadow-hover: 0 14px 26px var(--primary-a28);
+
+  --card-shadow: 0 10px 24px var(--card-shadow-color);
+  --card-shadow-hover: 0 14px 30px var(--shadow-mid-color);
+
+  --btn-hover-shadow: 0 14px 30px var(--hover-shadow-color);
+  --danger-hover-shadow: 0 14px 30px var(--danger-a14);
+
+  /* Page layout */
+  padding-top: 50px;
+  font-family: Roboto;
+}
+
+/* Top section */
+.myArticlesTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.myArticlesTitle {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: var(--text);
+}
+
+.myArticlesSub {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 680px;
+}
+
+/* Primary button */
+.myPrimaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 14px;
+
+  font-weight: 700;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-500));
+  box-shadow: var(--btn-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.myPrimaryBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--btn-shadow-hover);
+}
+
+.myPrimaryBtn:active {
+  transform: translateY(0px);
+  opacity: 0.92;
+}
+
+.myPrimaryBtn svg {
+  font-size: 18px;
+}
+
+/* Search / meta bar */
+.myArticlesBar {
+  margin-top: 40px;
+  margin-bottom: 40px !important;
+}
+
+.d-flex.right {
+  justify-content: end;
+}
+
+@media (max-width: 768px) {
+  .d-flex.right {
+    justify-content: start;
+    margin-top: 11px;
+  }
+}
+
+.myArticlesSearch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--primary-a22);
+  background: var(--surface-2);
+}
+
+.myArticlesSearch svg {
+  color: var(--muted);
+  font-size: 18px;
+  flex: 0 0 auto;
+}
+
+.myArticlesSearch input {
+  border: 0;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.myArticlesMeta {
+  font-size: 13px;
+  color: var(--gray-600);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.myArticlesMeta .dot {
+  opacity: 0.5;
+}
+
+.myArticlesPerPage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--gray-600);
+  white-space: nowrap;
+}
+
+.myArticlesPerPage select {
+  border: 1px solid var(--primary-a22);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 8px 10px;
+  outline: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* State cards */
+.myStateCard {
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--primary-a14);
+  box-shadow: var(--shadow-soft);
+  color: var(--text);
+}
+
+.myStateCard.error {
+  border-color: var(--danger-a20);
+  background: var(--danger-a06);
+  color: var(--danger-800);
+}
+
+/* Empty */
+.myEmpty {
+  padding: 26px 18px;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px dashed var(--primary-a28);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.myEmptyTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.myEmptySub {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* Card */
+.myArticleCard {
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid var(--primary-a14);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.myArticleCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Thumbnail */
+.myArticleThumb {
+  width: 100%;
+  height: 170px;
+  background: var(--primary-50);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.myArticleThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.myArticleThumbPh {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--primary-900);
+  background: linear-gradient(135deg, var(--primary-a18), var(--yellow-a55));
+  border: 1px solid var(--primary-a18);
+}
+
+/* Keep your override exactly */
+.myArticleThumb {
+  width: 100% !important;
+  height: 180px !important;
+}
+
+/* Card body */
+.myArticleBody {
+  padding: 14px 14px 12px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1 1 auto;
+}
+
+.myArticleTitle {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+
+.myArticleMetaLine {
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.myArticleExcerpt {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--gray-600);
+}
+
+/* Tags */
+.myArticleTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.myTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gray-700);
+  background: var(--yellow-100);
+  border: 1px solid var(--primary-a14);
+}
+
+/* Actions */
+.myArticleActions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.myBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--primary-a16);
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--text);
+  transition: transform 0.12s ease, background 0.12s ease,
+    border-color 0.12s ease;
+  backdrop-filter: blur(8px);
+}
+
+/* ✅ turn bg rgba into var (still color-only requirement) */
+.myBtn {
+  --btn-bg: rgba(255, 255, 255, 0.9);
+  background: var(--btn-bg);
+}
+
+.myBtn:hover {
+  background: var(--white);
+  border-color: var(--primary-a28);
+  box-shadow: var(--btn-hover-shadow);
+  transform: translateY(-2px);
+}
+
+.myBtn svg {
+  font-size: 16px;
+}
+
+.myBtn.danger {
+  color: var(--danger-700);
+  border-color: var(--danger-a28);
+  background: var(--danger-a06);
+}
+
+.myBtn.danger:hover {
+  background: rgba(239, 68, 68, 0.14);
+  box-shadow: var(--danger-hover-shadow);
+  transform: translateY(-2px);
+}
+
+/* ✅ also make danger hover bg a var */
+.myBtn.danger {
+  --danger-bg-hover: rgba(239, 68, 68, 0.14);
+}
+
+.myBtn.danger:hover {
+  background: var(--danger-bg-hover);
+}
+
+/* Pagination */
+.myArticlesPagination {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.myPagerBtn {
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--primary-a18);
+  background: var(--surface);
+  font-weight: 900;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.12s ease;
+  color: var(--text);
+}
+
+.myPagerBtn:hover:not(:disabled) {
+  background: var(--primary-50);
+  transform: translateY(-1px);
+}
+
+.myPagerBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.myPagerInfo {
+  font-size: 13px;
+  color: var(--gray-600);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+  .myArticlesMeta,
+  .myArticlesPerPage {
+    justify-content: space-between;
+  }
+
+  .myArticlesTop {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .myPrimaryBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================
+   DELETE MODAL (Minimal + Brand)
+   Works because modal is portal-based
+========================= */
+
+/* Backdrop */
+.myDeleteBackdrop.modal-backdrop {
+  background: var(--overlay-dark);
+}
+
+.myDeleteBackdrop.modal-backdrop.show {
+  opacity: 1;
+}
+
+/* Dialog sizing */
+.myDeleteModal.modal-dialog {
+  max-width: 520px;
+}
+
+/* Content */
+.myDeleteModalContent.modal-content {
+  border: 1px solid var(--primary-a16);
+  border-radius: 18px;
+  box-shadow: 0 18px 50px var(--deep-shadow);
+  overflow: hidden;
+}
+
+/* Header */
+.myDeleteModalContent .modal-header {
+  border-bottom: 1px solid var(--primary-a12);
+  background: linear-gradient(135deg, var(--primary-50), var(--yellow-50));
+}
+
+.myDeleteModalContent .modal-title {
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+
+/* Close button (subtle) */
+.myDeleteModalContent .btn-close {
+  opacity: 0.65;
+}
+
+.myDeleteModalContent .btn-close:hover {
+  opacity: 0.9;
+}
+
+/* Body text */
+.myDeleteModalContent .modal-body {
+  color: var(--gray-600);
+}
+
+.myDeleteModalContent .modal-body p {
+  color: var(--gray-700);
+  font-weight: 600;
+}
+
+/* Warning box (soft yellow, minimal) */
+.myDeleteModalContent .myDeleteWarning.alert-warning {
+  border: 1px solid var(--yellow-600);
+  background: var(--yellow-100);
+  color: var(--gray-800);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+/* Footer */
+.myDeleteModalContent .modal-footer {
+  border-top: 1px solid var(--primary-a12);
+  gap: 10px;
+}
+
+/* Buttons inside modal */
+.myDeleteModalContent .btn {
+  border-radius: 14px;
+  font-weight: 900;
+  padding: 10px 14px;
+}
+
+/* Cancel (light but branded border) */
+.myDeleteModalContent .btn-light {
+  background: var(--white);
+  border: 1px solid var(--primary-a18);
+  color: var(--gray-800);
+}
+
+.myDeleteModalContent .btn-light:hover {
+  background: var(--primary-50);
+  border-color: var(--primary-a28);
+}
+
+/* Danger (keep red but cleaner) */
+.myDeleteModalContent .btn-danger {
+  border: 0;
+  background: var(--danger-700);
+}
+
+.myDeleteModalContent .btn-danger:hover {
+  background: var(--danger-800);
+}
+
+.myDeleteModalContent .btn-danger:disabled,
+.myDeleteModalContent .btn-light:disabled {
+  opacity: 0.65;
+}
+
+/* Top section */
+.myArticlesTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.myArticlesTitle {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: var(--text);
+}
+
+.myArticlesSub {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 680px;
+}
+
+/* Primary button */
+.myPrimaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 14px;
+
+  font-weight: 700;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-500));
+  box-shadow: var(--btn-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.myPrimaryBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--btn-shadow-hover);
+}
+
+.myPrimaryBtn:active {
+  transform: translateY(0px);
+  opacity: 0.92;
+}
+
+.myPrimaryBtn svg {
+  font-size: 18px;
+}
+
+/* Search / meta bar */
+.myArticlesBar {
+  margin-top: 40px;
+  margin-bottom: 40px !important;
+}
+
+.d-flex.right {
+  justify-content: end;
+}
+
+@media (max-width: 768px) {
+  .d-flex.right {
+    justify-content: start;
+    margin-top: 11px;
+  }
+}
+
+.myArticlesSearch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--primary-a22);
+  background: var(--surface-2);
+}
+
+.myArticlesSearch svg {
+  color: var(--muted);
+  font-size: 18px;
+  flex: 0 0 auto;
+}
+
+.myArticlesSearch input {
+  border: 0;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.myArticlesMeta {
+  font-size: 13px;
+  color: var(--gray-600);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.myArticlesMeta .dot {
+  opacity: 0.5;
+}
+
+.myArticlesPerPage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--gray-600);
+  white-space: nowrap;
+}
+
+.myArticlesPerPage select {
+  border: 1px solid var(--primary-a22);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 8px 10px;
+  outline: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* State cards */
+.myStateCard {
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--primary-a14);
+  box-shadow: var(--shadow-soft);
+  color: var(--text);
+}
+
+.myStateCard.error {
+  border-color: var(--danger-a20);
+  background: var(--danger-a06);
+  color: var(--danger-800);
+}
+
+/* Empty */
+.myEmpty {
+  padding: 26px 18px;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px dashed var(--primary-a28);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.myEmptyTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.myEmptySub {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* Card */
+.myArticleCard {
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid var(--primary-a14);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.myArticleCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Thumbnail */
+.myArticleThumb {
+  width: 100%;
+  height: 170px;
+  background: var(--primary-50);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.myArticleThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.myArticleThumbPh {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--primary-900);
+  background: linear-gradient(135deg, var(--primary-a18), var(--yellow-a55));
+  border: 1px solid var(--primary-a18);
+}
+
+/* Keep your override exactly */
+.myArticleThumb {
+  width: 100% !important;
+  height: 180px !important;
+}
+
+/* Card body */
+.myArticleBody {
+  padding: 14px 14px 12px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1 1 auto;
+}
+
+.myArticleTitle {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+
+.myArticleMetaLine {
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.myArticleExcerpt {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--gray-600);
+}
+
+/* Tags */
+.myArticleTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.myTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gray-700);
+  background: var(--yellow-100);
+  border: 1px solid var(--primary-a14);
+}
+
+/* Actions */
+.myArticleActions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.myBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--primary-a16);
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--text);
+  transition: transform 0.12s ease, background 0.12s ease,
+    border-color 0.12s ease;
+  backdrop-filter: blur(8px);
+}
+
+/* ✅ turn bg rgba into var (still color-only requirement) */
+.myBtn {
+  background: var(--btn-bg);
+}
+
+.myBtn:hover {
+  background: var(--white);
+  border-color: var(--primary-a28);
+  box-shadow: var(--btn-hover-shadow);
+  transform: translateY(-2px);
+}
+
+.myBtn svg {
+  font-size: 16px;
+}
+
+.myBtn.danger {
+  color: var(--danger-700);
+  border-color: var(--danger-a28);
+  background: var(--danger-a06);
+}
+
+.myBtn.danger:hover {
+  background: rgba(239, 68, 68, 0.14);
+  box-shadow: var(--danger-hover-shadow);
+  transform: translateY(-2px);
+}
+
+/* ✅ also make danger hover bg a var */
+.myBtn.danger {
+  --danger-bg-hover: rgba(239, 68, 68, 0.14);
+}
+
+.myBtn.danger:hover {
+  background: var(--danger-bg-hover);
+}
+
+/* Pagination */
+.myArticlesPagination {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.myPagerBtn {
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--primary-a18);
+  background: var(--surface);
+  font-weight: 900;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.12s ease;
+  color: var(--text);
+}
+
+.myPagerBtn:hover:not(:disabled) {
+  background: var(--primary-50);
+  transform: translateY(-1px);
+}
+
+.myPagerBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.myPagerInfo {
+  font-size: 13px;
+  color: var(--gray-600);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+  .myArticlesMeta,
+  .myArticlesPerPage {
+    justify-content: space-between;
+  }
+
+  .myArticlesTop {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .myPrimaryBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================
+   DELETE MODAL (Minimal + Brand)
+   Works because modal is portal-based
+========================= */
+
+/* Backdrop */
+.myDeleteBackdrop.modal-backdrop {
+  background: var(--overlay-dark);
+}
+
+.myDeleteBackdrop.modal-backdrop.show {
+  opacity: 1;
+}
+
+/* Dialog sizing */
+.myDeleteModal.modal-dialog {
+  max-width: 520px;
+}
+
+/* Content */
+.myDeleteModalContent.modal-content {
+  border: 1px solid var(--primary-a16);
+  border-radius: 18px;
+  box-shadow: 0 18px 50px var(--deep-shadow);
+  overflow: hidden;
+}
+
+/* Header */
+.myDeleteModalContent .modal-header {
+  border-bottom: 1px solid var(--primary-a12);
+  background: linear-gradient(135deg, var(--primary-50), var(--yellow-50));
+}
+
+.myDeleteModalContent .modal-title {
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+
+/* Close button (subtle) */
+.myDeleteModalContent .btn-close {
+  opacity: 0.65;
+}
+
+.myDeleteModalContent .btn-close:hover {
+  opacity: 0.9;
+}
+
+/* Body text */
+.myDeleteModalContent .modal-body {
+  color: var(--gray-600);
+}
+
+.myDeleteModalContent .modal-body p {
+  color: var(--gray-700);
+  font-weight: 600;
+}
+
+/* Warning box (soft yellow, minimal) */
+.myDeleteModalContent .myDeleteWarning.alert-warning {
+  border: 1px solid var(--yellow-600);
+  background: var(--yellow-100);
+  color: var(--gray-800);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+/* Footer */
+.myDeleteModalContent .modal-footer {
+  border-top: 1px solid var(--primary-a12);
+  gap: 10px;
+}
+
+/* Buttons inside modal */
+.myDeleteModalContent .btn {
+  border-radius: 14px;
+  font-weight: 900;
+  padding: 10px 14px;
+}
+
+/* Cancel (light but branded border) */
+.myDeleteModalContent .btn-light {
+  background: var(--white);
+  border: 1px solid var(--primary-a18);
+  color: var(--gray-800);
+}
+
+.myDeleteModalContent .btn-light:hover {
+  background: var(--primary-50);
+  border-color: var(--primary-a28);
+}
+
+/* Danger (keep red but cleaner) */
+.myDeleteModalContent .btn-danger {
+  border: 0;
+  background: var(--danger-700);
+}
+
+.myDeleteModalContent .btn-danger:hover {
+  background: var(--danger-800);
+}
+
+.myDeleteModalContent .btn-danger:disabled,
+.myDeleteModalContent .btn-light:disabled {
+  opacity: 0.65;
+}
+
+
+/* =========================
+   Dark Mode Fix (MyArticles)
+   Only top texts on dark bg
+========================= */
+body[data-theme="dark"] .myArticlesPage .myArticlesTitle,
+body.dark .myArticlesPage .myArticlesTitle {
+  color: var(--app-text) !important;
+}
+
+body[data-theme="dark"] .myArticlesPage .myArticlesSub,
+body.dark .myArticlesPage .myArticlesSub {
+  color: var(--app-muted) !important;
+}
+
+body[data-theme="dark"] .myArticlesPage .myArticlesMeta,
+body.dark .myArticlesPage .myArticlesMeta {
+  color: var(--app-muted) !important;
+}
+
+body[data-theme="dark"] .myArticlesPage .myArticlesPerPage,
+body.dark .myArticlesPage .myArticlesPerPage {
+  color: var(--app-muted) !important;
+}
+
+body[data-theme="dark"] .myArticlesPage .myPagerInfo,
+body.dark .myArticlesPage .myPagerInfo {
+  color: var(--app-muted) !important;
+}

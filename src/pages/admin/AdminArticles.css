@@ -1,0 +1,78 @@
+.adminArticlesPage {
+  width: 100%;
+}
+
+/* widths moved from inline styles */
+.adminArticles-modeSelect {
+  width: 200px;
+}
+
+.adminArticles-perPageSelect {
+  width: 160px;
+}
+
+/* search input styles moved from inline */
+.adminArticles-searchInput {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+}
+
+/* table column widths moved from inline */
+.adminArticles-colId {
+  width: 80px;
+}
+
+.adminArticles-colImg {
+  width: 80px;
+}
+
+.adminArticles-colAuthor {
+  width: 160px;
+}
+
+.adminArticles-colCreated {
+  width: 130px;
+}
+
+.adminArticles-colActions {
+  width: 260px;
+}
+
+/* image styles moved from inline */
+.adminArticles-thumb {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* placeholder styles moved from inline */
+.adminArticles-thumbPh {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #f3effe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #6341af;
+}
+
+/* title maxWidth moved from inline */
+.adminArticles-titleCell {
+  max-width: 420px;
+}
+
+
+h2{
+      font-size: 28px;
+    font-weight: 900;
+    color: var(--g500);
+    letter-spacing: -0.3px;
+}
+label{
+  color: #b5b0b0;
+}

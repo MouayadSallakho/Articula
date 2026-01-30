@@ -1,0 +1,44 @@
+/* src/pages/NotFound.css */
+.nf-wrap {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.nf-card {
+  width: min(900px, 100%);
+  text-align: center;
+}
+
+.nf-img {
+  width: min(520px, 100%);
+  height: auto;
+  display: block;
+  margin: 0 auto 18px;
+}
+
+
+
+.nf-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nf-btn {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.nf-link {
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}

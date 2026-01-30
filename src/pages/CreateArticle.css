@@ -1,0 +1,570 @@
+.create-article-page {
+  /* ✅ اربط هالصفحة على theme.css */
+  --main-50: var(--brand-50);
+  --main-500: var(--brand-500);
+  --main-600: var(--brand-600);
+  --main-700: var(--brand-700);
+  --main-800: var(--brand-800);
+
+  /* إذا بدك تضل تستخدم yellow-100 */
+  --yellow-50: var(--yellow-50);
+  --yellow-100: var(--yellow-50);
+
+  /* ✅ surfaces/text من الثيم (تشتغل Light/Dark لحالها) */
+  --surface: var(--app-surface);
+  --surface-soft: var(--app-surface-2);
+  --text: var(--app-text);
+  --muted: var(--app-muted);
+
+  /* brand */
+  --primary: var(--brand-600);
+
+  /* rgb helpers (بتضل ثابتة لأنك تستخدمها للحواف) */
+  --main-600-rgb: 124, 84, 224;
+  --gray-900-rgb: 21, 21, 21;
+  --ink-rgb: 29, 32, 38;
+  --slate-rgb: 17, 24, 39;
+
+  /* borders (بتضل شغالة) */
+  --b-14: rgba(var(--main-600-rgb), 0.14);
+  --b-16: rgba(var(--main-600-rgb), 0.16);
+  --b-18: rgba(var(--main-600-rgb), 0.18);
+  --b-22: rgba(var(--main-600-rgb), 0.22);
+  --b-26: rgba(var(--main-600-rgb), 0.26);
+  --b-28: rgba(var(--main-600-rgb), 0.28);
+  --b-30: rgba(var(--main-600-rgb), 0.30);
+  --b-35: rgba(var(--main-600-rgb), 0.35);
+  --b-45: rgba(var(--main-600-rgb), 0.45);
+  --b-70: rgba(var(--main-600-rgb), 0.70);
+
+  /* ✅ shadows من theme.css (بتتغير بالدارك تلقائيًا) */
+  --shadow-soft: var(--shadow-soft);
+  --shadow-mid: var(--shadow-panel);
+
+  /* overlay من theme */
+  --overlay: var(--overlay-dark-45);
+
+  /* danger */
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --danger-2: #b91c1c;
+  --danger-shadow: rgba(239, 68, 68, 0.22);
+  --danger-border: rgba(239, 68, 68, 0.22);
+
+  /* remove btn */
+  --remove-btn-border: rgba(255, 255, 255, 0.35);
+  --remove-btn-bg: rgba(21, 21, 21, 0.55);
+  --remove-btn-bg-hover: rgba(21, 21, 21, 0.7);
+
+  /* focus / submit shadows */
+  --focus-ring: rgba(var(--main-600-rgb), 0.14);
+  --submit-shadow: rgba(var(--main-600-rgb), 0.22);
+  --submit-shadow-hover: rgba(var(--main-600-rgb), 0.26);
+
+  /* Controls */
+  --control-bg: var(--app-surface);
+  --control-border: var(--b-30);
+  --control-border-hover: var(--b-45);
+  --control-border-focus: var(--b-70);
+  --control-focus-ring: 0 0 0 0.22rem rgba(var(--main-600-rgb), 0.18);
+
+  /* placeholder */
+  --placeholder: rgba(var(--ink-rgb), 0.40);
+
+  /* Tags */
+  --tags-bg: var(--app-surface);
+  --tags-border: var(--b-26);
+  --tags-shadow: var(--shadow-panel);
+
+  --check-border: var(--b-35);
+  --check-focus-ring: 0 0 0 0.22rem rgba(var(--main-600-rgb), 0.18);
+  --check-checked-bg: var(--brand-600);
+  --check-checked-border: var(--brand-600);
+}
+
+/* =========================
+   Top Bar
+========================= */
+.caTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.caTitle {
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+
+/* Back button */
+.create-article-page .caBackBtn.btn {
+  border-radius: 14px;
+  font-weight: 900;
+  border: 1px solid var(--b-18);
+  color: var(--gray-600);
+  background: var(--surface);
+}
+
+.create-article-page .caBackBtn.btn:hover {
+  background: var(--main-50);
+  border-color: var(--b-28);
+  color: var(--gray-800);
+}
+
+/* =========================
+   Card containers
+========================= */
+.caCard {
+  background: var(--surface);
+  border: 1px solid var(--b-14);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.caSideCard {
+  margin-bottom: 14px;
+}
+
+/* =========================
+   Form elements
+========================= */
+.caLabel {
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--gray-600);
+  margin-bottom: 6px;
+}
+
+.caControl.form-control,
+.caControl.form-select {
+  border-radius: 14px;
+  border: 1px solid var(--b-18);
+  background: var(--surface-soft);
+  color: var(--text);
+}
+
+.caControl.form-control:focus,
+.caControl.form-select:focus {
+  box-shadow: 0 0 0 0.2rem var(--focus-ring);
+  border-color: var(--b-35);
+ background: var(--surface);
+}
+
+.caHint {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.caSectionTitle {
+  font-weight: 900;
+  color: var(--gray-600);
+}
+
+/* Tags box */
+.ca-tagsBox {
+  border: 1px solid var(--b-14);
+  background: var(--yellow-50);
+  border-radius: 16px;
+  padding: 10px 12px;
+  max-height: 190px;
+  overflow: auto;
+}
+
+.ca-tagsBox .form-check {
+  margin: 6px 0;
+}
+
+.ca-tagsBox .form-check-label {
+  color: var(--gray-600);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.ca-tagsBox input[type="checkbox"] {
+  accent-color: var(--primary);
+}
+
+/* Empty hint */
+.caEmptyHint {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================
+   Banner preview
+========================= */
+.caPreviewWrap {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--b-14);
+  background: var(--main-50);
+}
+
+.caPreviewImg {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+}
+
+.caRemoveBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid var(--remove-btn-border);
+  background: var(--remove-btn-bg);
+  color: var(--white);
+  font-size: 22px;
+  line-height: 30px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.caRemoveBtn:hover {
+  background: var(--remove-btn-bg-hover);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Gallery
+========================= */
+.caGalleryTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.caClearBtn {
+  border: 0;
+  background: transparent;
+  font-weight: 900;
+  color: var(--danger-2);
+  cursor: pointer;
+}
+
+.caClearBtn:hover {
+  text-decoration: underline;
+}
+
+.caGalleryGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.caGalleryItem {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--b-14);
+  background: var(--main-50);
+}
+
+.caGalleryImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.caGalleryRemove {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--danger);
+  color: var(--white);
+  font-weight: 900;
+  cursor: pointer;
+  line-height: 26px;
+  box-shadow: 0 10px 20px var(--danger-shadow);
+}
+
+.caGalleryRemove:hover {
+  background: var(--danger-hover);
+}
+
+/* =========================
+   Submit button
+========================= */
+.create-article-page .caSubmitBtn.btn {
+  border: 0;
+  border-radius: 16px;
+  font-weight: 900;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, var(--main-600), var(--main-500));
+  box-shadow: 0 12px 26px var(--submit-shadow);
+}
+
+.create-article-page .caSubmitBtn.btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--main-700), var(--main-600));
+  box-shadow: 0 16px 32px var(--submit-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.create-article-page .caSubmitBtn.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Success overlay buttons */
+.create-article-page .caPrimaryBtn.btn {
+  border: 0;
+  border-radius: 16px;
+  font-weight: 900;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, var(--main-600), var(--main-500));
+}
+
+.create-article-page .caOutlineBtn.btn {
+  border-radius: 16px;
+  font-weight: 900;
+  border: 1px solid var(--b-22);
+  color: var(--primary);
+background: var(--surface);
+}
+
+.create-article-page .caOutlineBtn.btn:hover {
+  background: var(--main-50);
+  border-color: var(--b-30);
+}
+
+.create-article-page .caOutlineSecondaryBtn.btn {
+  border-radius: 16px;
+  font-weight: 900;
+  border: 1px solid var(--b-18);
+ background: var(--surface);
+  color: var(--gray-600);
+}
+
+.create-article-page .caOutlineSecondaryBtn.btn:hover {
+  background: var(--yellow-50);
+  border-color: var(--b-26);
+  color: var(--gray-800);
+}
+
+/* =========================
+   Success Overlay
+========================= */
+.successOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: var(--overlay);
+}
+
+.successCard {
+  width: 100%;
+  max-width: 520px;
+ background: var(--surface);
+  border-radius: 22px;
+  border: 1px solid var(--b-16);
+  box-shadow: var(--shadow-mid);
+  padding: 18px 18px 16px;
+  overflow: hidden;
+}
+
+.successIcon {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 26px;
+  color: var(--main-800);
+  background: linear-gradient(135deg, var(--main-50), var(--yellow-100));
+  border: 1px solid var(--b-16);
+  margin-bottom: 10px;
+}
+
+.successTitle {
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  color: var(--gray-800);
+}
+
+.successText {
+  margin: 6px 0 12px;
+  color: var(--gray-400);
+  line-height: 1.55;
+}
+
+.successBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Copy link button */
+.copyLinkBtn {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--b-18);
+  background: var(--yellow-50);
+  color: var(--gray-800);
+  font-weight: 900;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.copyLinkBtn:hover:not(:disabled) {
+  background: var(--yellow-100);
+  border-color: var(--b-26);
+  transform: translateY(-1px);
+}
+
+.copyLinkBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.copyLinkBtn.copied {
+  background: var(--main-50);
+  border-color: var(--b-26);
+  color: var(--main-800);
+}
+
+/* Alerts (inside page) */
+.create-article-page .alert-danger {
+  border-radius: 16px;
+  border-color: var(--danger-border);
+}
+
+/* Responsive tiny tweaks */
+@media (max-width: 575px) {
+  .successCard {
+    border-radius: 18px;
+  }
+
+  .caCard {
+    border-radius: 16px;
+  }
+}
+
+/* =========================
+   CreateArticle - Stronger Controls (Overrides)
+   (same design — only vars)
+========================= */
+
+/* Inputs / Select / Textarea */
+.create-article-page .caControl.form-control,
+.create-article-page .caControl.form-select {
+  background: var(--control-bg) !important;
+  border: 1.6px solid var(--control-border) !important;
+  padding: 12px 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+/* Hover */
+.create-article-page .caControl.form-control:hover,
+.create-article-page .caControl.form-select:hover {
+  border-color: var(--control-border-hover) !important;
+}
+
+/* Focus */
+.create-article-page .caControl.form-control:focus,
+.create-article-page .caControl.form-select:focus {
+  border-color: var(--control-border-focus) !important;
+  box-shadow: var(--control-focus-ring) !important;
+  outline: none !important;
+}
+
+/* Placeholder */
+.create-article-page .caControl::placeholder {
+  /* color: var(--placeholder); */
+  font-weight: 600;
+}
+
+body[data-theme="dark"] .create-article-page .caControl::placeholder,
+body.dark .create-article-page .caControl::placeholder{
+   color: var(--placeholder);
+   color: #FFFFFF;
+}
+
+
+
+/* Textarea behavior */
+.create-article-page textarea.caControl {
+  resize: vertical;
+  min-height: 220px;
+}
+
+/* File input: make it look branded */
+.create-article-page .caControl[type="file"] {
+  background: var(--yellow-50) !important;
+  border: 1.6px solid var(--control-border) !important;
+  padding: 10px 12px;
+}
+
+.create-article-page .caControl[type="file"]::file-selector-button {
+  margin-right: 12px;
+  border: 1px solid var(--control-border);
+  background: linear-gradient(135deg, var(--main-50), var(--yellow-100));
+  color: var(--main-800);
+  font-weight: 900;
+  border-radius: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.create-article-page .caControl[type="file"]::file-selector-button:hover {
+  border-color: var(--control-border-hover);
+  transform: translateY(-1px);
+}
+
+.ssssaa {
+  padding-left: 16px !important;
+}
+
+/* Tags stronger box (same design — vars only) */
+.create-article-page .ca-tagsBox {
+  background: var(--tags-bg) !important;
+  border: 1.6px solid var(--tags-border) !important;
+  box-shadow: var(--tags-shadow);
+  padding: 12px 12px;
+}
+
+/* Checkbox واضح */
+.create-article-page .ca-tagsBox .form-check-input {
+  width: 18px;
+  height: 18px;
+  margin-top: 0;
+  cursor: pointer;
+  border: 1.6px solid var(--check-border);
+}
+
+.create-article-page .ca-tagsBox .form-check-input:focus {
+  box-shadow: var(--check-focus-ring);
+  border-color: var(--control-border-focus);
+}
+
+/* لما يكون checked */
+.create-article-page .ca-tagsBox .form-check-input:checked {
+  background-color: var(--check-checked-bg);
+  border-color: var(--check-checked-border);
+}
+
+

@@ -1,0 +1,536 @@
+/* src/pages/LogIn.css */
+
+/* ✅ IMPORTANT:
+   - Keep styles scoped inside .login to avoid affecting other pages
+   - Dark mode supports BOTH:
+     body.dark  AND  html[data-theme="dark"]
+*/
+
+.login p {
+  margin-bottom: 0px;
+}
+
+.login img {
+  max-width: 100%;
+}
+
+/* =========================
+   Base Background
+========================= */
+.login {
+  background: linear-gradient(to right, #f3effe 50%, white 50%);
+}
+
+@media (max-width: 768px) {
+  .login {
+    background: linear-gradient(to right, white 50%, white 50%);
+  }
+}
+
+/* ✅ Dark mode background (supports both selectors) */
+body.dark .login,
+html[data-theme="dark"] .login {
+  background: linear-gradient(to right, #1c1c1c 50%, #151515 50%);
+}
+
+@media (max-width: 768px) {
+  body.dark .login,
+  html[data-theme="dark"] .login {
+    background: linear-gradient(to right, #151515 50%, #151515 50%);
+  }
+}
+
+/* =========================
+   Header
+========================= */
+.login .headerLog {
+  background-color: #6341af;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.login .headerLog .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login .headerLog .container div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.login .headerLog .container div p {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+
+.login .headerLog .container div a {
+  color: #ffffff;
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  border-radius: 15px;
+  border: 1px solid #ffffff;
+  padding: 10px 40px;
+}
+
+/* ✅ Dark header tweak (slightly deeper for contrast) */
+body.dark .login .headerLog,
+html[data-theme="dark"] .login .headerLog {
+  background-color: #4c3387;
+}
+
+/* =========================
+   Layout
+========================= */
+.ourlogin {
+  height: calc(100vh - 85px);
+}
+
+.ourlogin .container {
+  height: 100%;
+}
+
+.ourlogin .row {
+  align-items: center;
+  height: 100%;
+}
+
+.ourlogin .row .left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   Title
+========================= */
+.ourlogin .row .right .FirstAmbrithon {
+  margin-bottom: 30px;
+}
+
+.ourlogin .row .right .FirstAmbrithon p {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -1%;
+  text-align: center;
+  color: #1d2026;
+}
+
+/* ✅ Dark title */
+body.dark .ourlogin .row .right .FirstAmbrithon p,
+html[data-theme="dark"] .ourlogin .row .right .FirstAmbrithon p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* =========================
+   Labels
+========================= */
+.ourlogin .row .right .label_pass label,
+.ourlogin .row .right .name label {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -1%;
+  color: #1d2026;
+}
+
+/* ✅ Dark labels */
+body.dark .ourlogin .row .right .label_pass label,
+body.dark .ourlogin .row .right .name label,
+html[data-theme="dark"] .ourlogin .row .right .label_pass label,
+html[data-theme="dark"] .ourlogin .row .right .name label {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* =========================
+   Placeholders
+========================= */
+.ourlogin .row .right .Input_Eye input::placeholder,
+.ourlogin .row .right .name input::placeholder {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #8c94a3;
+}
+
+/* ✅ Dark placeholder */
+body.dark .ourlogin .row .right .Input_Eye input::placeholder,
+body.dark .ourlogin .row .right .name input::placeholder,
+html[data-theme="dark"] .ourlogin .row .right .Input_Eye input::placeholder,
+html[data-theme="dark"] .ourlogin .row .right .name input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* =========================
+   Forgot Password Row
+========================= */
+.ourlogin .row .right .label_pass {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Forgot Password link */
+.ourlogin .row .right .label_pass a {
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #6341af;
+  position: relative;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.ourlogin .row .right .label_pass a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #6341af;
+  transition: width 0.2s ease;
+}
+
+.ourlogin .row .right .label_pass a:hover {
+  color: #4f3190;
+  transform: translateY(-1px);
+}
+
+.ourlogin .row .right .label_pass a:hover::after {
+  width: 100%;
+}
+
+/* ✅ Dark forgot link */
+body.dark .ourlogin .row .right .label_pass a,
+html[data-theme="dark"] .ourlogin .row .right .label_pass a {
+  color: #8b5cf6;
+}
+
+body.dark .ourlogin .row .right .label_pass a::after,
+html[data-theme="dark"] .ourlogin .row .right .label_pass a::after {
+  background-color: #8b5cf6;
+}
+
+/* =========================
+   Eye / Password
+========================= */
+.ourlogin .row .right .Input_Eye {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.ourlogin .row .right .Input_Eye button {
+  position: absolute;
+  right: 1px;
+  border: none;
+  background: none;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4e5566;
+  font-size: 20px;
+}
+
+/* ✅ Dark eye icon */
+body.dark .ourlogin .row .right .Input_Eye button,
+html[data-theme="dark"] .ourlogin .row .right .Input_Eye button {
+  color: rgba(255, 255, 255, 0.70);
+}
+
+/* =========================
+   Remember
+========================= */
+.ourlogin .row .right .remember {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ourlogin .row .right .remember input {
+  border: none;
+  width: 17px;
+  height: 17px;
+}
+
+/* ✅ Dark remember label */
+body.dark .ourlogin .row .right .remember label,
+html[data-theme="dark"] .ourlogin .row .right .remember label {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* =========================
+   Inputs (Bootstrap .form-control)
+========================= */
+body.dark .ourlogin .form-control,
+html[data-theme="dark"] .ourlogin .form-control {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+body.dark .ourlogin .form-control:focus,
+html[data-theme="dark"] .ourlogin .form-control:focus {
+  border-color: rgba(139, 92, 246, 0.55);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.20);
+}
+
+/* =========================
+   Submit Button
+========================= */
+.ourlogin .row .right .submit {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 48px;
+  letter-spacing: -0.8%;
+  text-transform: capitalize;
+  color: #ffffff;
+  background-color: #8b5cf6;
+}
+
+.ourlogin .row .right .submit:hover {
+  background-color: #7c54e0;
+}
+
+.ourlogin .row .right .submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Divider
+========================= */
+.ourlogin .row .right .login-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 24px 0;
+  font-size: 14px;
+  color: #9e9e9e;
+}
+
+.ourlogin .row .right .login-divider::before,
+.ourlogin .row .right .login-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.ourlogin .row .right .login-divider::before {
+  margin-right: 10px;
+}
+
+.ourlogin .row .right .login-divider::after {
+  margin-left: 10px;
+}
+
+/* ✅ Dark divider */
+body.dark .ourlogin .row .right .login-divider,
+html[data-theme="dark"] .ourlogin .row .right .login-divider {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+body.dark .ourlogin .row .right .login-divider::before,
+body.dark .ourlogin .row .right .login-divider::after,
+html[data-theme="dark"] .ourlogin .row .right .login-divider::before,
+html[data-theme="dark"] .ourlogin .row .right .login-divider::after {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+/* =========================
+   Social Login Buttons
+========================= */
+.ourlogin .row .right .typeLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ourlogin .row .right .typeLogin .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+  border: 1px solid #cab4fb;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ourlogin .row .right .typeLogin .nav-link img {
+  object-fit: contain;
+  padding: 7px;
+}
+
+.ourlogin .row .right .typeLogin .nav-link p {
+  padding: 10px 30px;
+  position: relative;
+}
+
+.ourlogin .row .right .typeLogin .nav-link p::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 1px;
+  background-color: #cab4fb;
+}
+
+/* ✅ Dark social buttons */
+body.dark .ourlogin .row .right .typeLogin .nav-link,
+html[data-theme="dark"] .ourlogin .row .right .typeLogin .nav-link {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(202, 180, 251, 0.35);
+  color: rgba(255, 255, 255, 0.90);
+}
+
+body.dark .ourlogin .row .right .typeLogin .nav-link p::after,
+html[data-theme="dark"] .ourlogin .row .right .typeLogin .nav-link p::after {
+  background-color: rgba(202, 180, 251, 0.35);
+}
+
+/* =========================
+   Welcome (keep scoped)
+========================= */
+.login .welcome-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f6fb;
+}
+
+.login .welcome-card {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.login .welcome-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 24px;
+}
+
+.login .welcome-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #7c3aed;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 16px;
+}
+
+.login .welcome-text {
+  font-size: 16px;
+  color: #4b5563;
+  margin-bottom: 24px;
+}
+
+.login .welcome-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.login .welcome-btn {
+  border-radius: 999px;
+  padding: 10px 26px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.login .welcome-btn.main-btn {
+  background-color: #7c3aed;
+  border-color: #7c3aed;
+  color: #ffffff;
+}
+
+.login .welcome-btn.secondary-btn {
+  background-color: #ffffff;
+  border-color: #e5e7eb;
+  color: #111827;
+}
+
+.login .welcome-logout {
+  margin-top: 12px;
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ✅ Dark welcome */
+body.dark .login .welcome-wrapper,
+html[data-theme="dark"] .login .welcome-wrapper {
+  background: #151515;
+}
+
+body.dark .login .welcome-title,
+html[data-theme="dark"] .login .welcome-title {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+body.dark .login .welcome-text,
+html[data-theme="dark"] .login .welcome-text {
+  color: rgba(255, 255, 255, 0.70);
+}
+
+body.dark .login .welcome-btn.secondary-btn,
+html[data-theme="dark"] .login .welcome-btn.secondary-btn {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.90);
+}
+
+body.dark .login .welcome-logout,
+html[data-theme="dark"] .login .welcome-logout {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .login .welcome-title {
+    font-size: 26px;
+  }
+
+  .login .welcome-card {
+    padding: 24px 12px;
+  }
+
+  .login .welcome-buttons {
+    flex-direction: column;
+  }
+
+  .login .welcome-btn {
+    width: 100%;
+  }
+}

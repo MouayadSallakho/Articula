@@ -1,0 +1,413 @@
+/* =========================
+   About page (Theme-ready)
+   Uses global tokens from src/styles/theme.css
+   NO :root here
+========================= */
+
+/* =========================
+   Slider (SlideAboutUs)
+========================= */
+
+.inner-slider-wrapper{
+  position: relative;
+  border-radius: 24px;
+  overflow: visible;
+  box-shadow: var(--shadow-panel, 0 18px 40px rgba(0,0,0,0.12));
+}
+
+/* Pagination vertical */
+.inner-slider-wrapper .swiper-pagination{
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: fit-content;
+}
+
+.inner-slider-wrapper .swiper-pagination-bullet{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+
+  /* light default */
+  background-color: rgba(0,0,0,0.28);
+  opacity: 0.55;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.inner-slider-wrapper .swiper-pagination-bullet-active{
+  width: 10px;
+  height: 10px;
+  background-color: var(--brand-600);
+  opacity: 1;
+}
+
+body.dark .inner-slider-wrapper .swiper-pagination-bullet,
+body[data-theme="dark"] .inner-slider-wrapper .swiper-pagination-bullet{
+  background-color: rgba(255,255,255,0.32);
+  opacity: 0.7;
+}
+
+body.dark .inner-slider-wrapper .swiper-pagination-bullet-active,
+body[data-theme="dark"] .inner-slider-wrapper .swiper-pagination-bullet-active{
+  background-color: var(--brand-600);
+  opacity: 1;
+}
+
+.inner-swiper img{
+  object-fit: cover;
+  width: 100%;
+}
+
+.outswiper{
+  padding-bottom: 60px;
+}
+
+.outswiper .left > p:first-child{
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 80px;
+  letter-spacing: -2%;
+  color: var(--app-border);
+  margin-bottom: 0px;
+}
+
+.outswiper .left > p:first-child + h2{
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 47px;
+  line-height: 140%;
+  color: var(--app-text);
+  margin-bottom: 0px;
+}
+
+.outswiper .left > p:first-child + h2 + span{
+  display: block;
+  width: 80%;
+  background-color: var(--app-border);
+  height: 3px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.outswiper .left > p:first-child + h2 + span + p{
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--app-muted);
+}
+
+/* =========================
+   Brands inside About ONLY
+   (scoped)
+========================= */
+
+.underSlideAboutUs .holderBramds{
+  background: var(--brand-50);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+body.dark .underSlideAboutUs .holderBramds,
+body[data-theme="dark"] .underSlideAboutUs .holderBramds{
+  background: var(--app-bg);
+}
+
+.underSlideAboutUs .holderBramds .dd{
+  height: 60px;
+  box-sizing: border-box;
+  padding: 0px 30px;
+  background: var(--app-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: 1px solid var(--app-border);
+}
+
+/* إذا بدك تضل الكروت بيضا بالدارك مثل ما عملت بالهوم */
+body.dark .underSlideAboutUs .holderBramds .dd,
+body[data-theme="dark"] .underSlideAboutUs .holderBramds .dd{
+  background: #ffffff;
+  border-color: rgba(255,255,255,0.14);
+}
+
+/* =========================
+   Our Group section
+========================= */
+
+.ourGroup{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+.ourGroup .container .row{
+  align-items: center;
+  text-align: end;
+}
+
+.ourGroup .container .row .right{
+  padding-left: 50px;
+}
+
+@media (max-width: 992px){
+  .ourGroup .container .row .right{
+    padding-left: 0px;
+  }
+}
+
+.ourGroup .container .row h4{
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 140%;
+  text-align: right;
+  color: var(--app-text);
+  max-width: 350px;
+  margin-left: auto;
+}
+
+.ourGroup .container .row h4 + p{
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+  text-align: right;
+  color: var(--app-muted);
+  margin-bottom: 25px;
+}
+
+.ourGroup .container .row .holderInfo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ourGroup .container .row .holderInfo .content{
+  display: flex;
+  gap: 0px;
+}
+
+.ourGroup .container .row .holderInfo .content p{
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 40px;
+  text-align: right;
+  color: var(--app-text);
+}
+
+.ourGroup .container .row .holderInfo .content span{
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  color: var(--app-muted);
+}
+
+.ourGroup .container .row .holderInfo .content svg{
+  font-size: 25px;
+}
+
+/* Accent colors (safe to keep hardcoded) */
+.ourGroup .container .row .holderInfo > .content:first-child{
+  color: #564FFD; /* purple accent */
+}
+
+.ourGroup .container .row .holderInfo > .content:nth-child(2){
+  color: #23BD33; /* green accent */
+}
+
+.ourGroup .container .row .holderInfo > .content:last-child{
+  color: #FD8E1F; /* orange accent */
+}
+
+/* =========================
+   Top Testimonials
+   NOTE: دعمنا الاسمين (TopTestimonials + TopTestimo)
+========================= */
+
+.TopTestimonials,
+.TopTestimo{
+  padding-bottom: 50px;
+  position: relative;
+  background: var(--brand-50);
+}
+
+body.dark .TopTestimonials,
+body[data-theme="dark"] .TopTestimonials,
+body.dark .TopTestimo,
+body[data-theme="dark"] .TopTestimo{
+  background: var(--app-bg);
+}
+
+.TopTestimonials .holderAdress,
+.TopTestimo .holderAdress{
+  position: relative;
+  top: -31px;
+  padding: 7px;
+  width: 350px;
+  background: var(--brand-700);
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+  margin-bottom: 0px;
+}
+
+.TopTestimonials .holderAdress::after,
+.TopTestimo .holderAdress::after{
+  content:"";
+  position:absolute;
+  top:-150%;
+  left:-150%;
+  width:250%;
+  height:250%;
+  pointer-events:none;
+  background: linear-gradient(
+    60deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.15) 45%,
+    rgba(255,255,255,0.55) 50%,
+    rgba(255,255,255,0.15) 55%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: rotate(15deg);
+  animation: shine-sweep 3.8s linear infinite;
+}
+
+@keyframes shine-sweep{
+  0%{ transform: translateX(-30%) translateY(-30%) rotate(15deg); }
+  100%{ transform: translateX(90%) translateY(90%) rotate(15deg); }
+}
+
+.TopTestimonials .holderAdress h2,
+.TopTestimo .holderAdress h2{
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 140%;
+  color: #ffffff;
+  margin-bottom: 0px;
+}
+
+.TopTestimonials .container,
+.TopTestimo .container{
+  padding-top: 30px;
+}
+
+.TopTestimonials .container .swiper-slide .Box-Data,
+.TopTestimo .container .swiper-slide .Box-Data{
+  background: var(--app-surface);
+  border-radius: 20px;
+  border: 1px solid var(--app-border);
+  box-shadow: var(--shadow-panel);
+}
+
+.TopTestimonials .container .swiper-slide .Box-Data > div:first-child,
+.TopTestimo .container .swiper-slide .Box-Data > div:first-child{
+  padding: 40px 20px;
+}
+
+.TopTestimonials .container .swiper-slide .Box-Data svg,
+.TopTestimo .container .swiper-slide .Box-Data svg{
+  color: #FF6636; /* accent red */
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.TopTestimonials .container .swiper-slide .Box-Data svg + p,
+.TopTestimo .container .swiper-slide .Box-Data svg + p{
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--app-text);
+}
+
+.TopTestimonials .container .swiper-slide .Box-Data svg + p + svg,
+.TopTestimo .container .swiper-slide .Box-Data svg + p + svg{
+  margin-bottom: 0px;
+  margin-left: auto;
+  width: fit-content;
+}
+
+.TopTestimonials .container .swiper-slide .Box-Data > div:last-child,
+.TopTestimo .container .swiper-slide .Box-Data > div:last-child{
+  background: var(--brand-600);
+  text-align: center;
+  padding: 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.TopTestimonials .container .swiper-slide .Box-Data > div:last-child p,
+.TopTestimo .container .swiper-slide .Box-Data > div:last-child p{
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.TopTestimonials .container .swiper-slide .Box-Data > div:last-child span,
+.TopTestimo .container .swiper-slide .Box-Data > div:last-child span{
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: rgba(255,255,255,0.92);
+}
+
+.title svg:first-child + p + svg{
+  display: block;
+  margin-left: auto !important;
+}
+
+/* =========================
+   Footer wrapper
+========================= */
+
+.holderFooter{
+  padding-top: 55.2px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px){
+  .row.holder-right-left{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .row.holder-right-left .right{
+    margin-bottom: 30px;
+  }
+
+  .ourGroup .left{
+    margin-bottom: 30px;
+  }
+
+  .ourGroup .right .holderInfo{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 50px;
+    justify-content: end !important;
+  }
+}
+
+.timeline-section{
+  padding-top: 26px !important;
+}

@@ -1,0 +1,479 @@
+:root {
+
+  --main-50: #F3EFFE;
+  --hero-title: #1D2026;
+  --hero-desc: #4E5566;
+  --text-dark: #242424;
+  --color-white: #FFFFFF;
+
+  /* Purples */
+  --categories-link: #7E54E0;
+  --footer-bg: #6341AF;
+  --main-500: #8b5cf6;
+  --main-200: #cab4fb;
+
+  /* Grays */
+  --breadcrumb-muted: #6E7485;
+  --gray-300: #767676;
+  --gray-200: #A1A1A1;
+
+  /* Effects */
+  --shine-0: rgba(255, 255, 255, 0);
+  --shine-15: rgba(255, 255, 255, 0.15);
+  --shine-55: rgba(255, 255, 255, 0.55);
+
+  --btn-glow: #b69cf3;
+
+  /* JoinUs / Perks */
+  --join-title: #224A3B;
+  --join-text: #4E6E62;
+
+  --perk-bg: #f8f6ff;
+  --perk-shadow: #e2e2e2;
+}
+
+
+body.dark {
+  /* أهم نقطة: هون منخلي الخلفيات اللي كانت main-50 تتحول لـ app-bg */
+  --main-50: var(--app-bg);
+
+  /* نصوص */
+  --hero-title: var(--app-text);
+  --hero-desc: var(--app-muted);
+  --text-dark: var(--app-text);
+
+  /* أي صندوق كان أبيض باللايت، يصير surface بالدّارك */
+  --color-white: var(--app-surface);
+
+  /* Breadcrumb / grays */
+  --breadcrumb-muted: rgba(255, 255, 255, 0.65);
+  --gray-300: rgba(255, 255, 255, 0.70);
+  --gray-200: rgba(255, 255, 255, 0.55);
+
+  /* Perks background */
+  --perk-bg: var(--app-surface);
+  --perk-shadow: rgba(0, 0, 0, 0.35);
+
+  /* Shine على العناوين (خففه بالدّارك) */
+  --shine-15: rgba(255, 255, 255, 0.08);
+  --shine-55: rgba(255, 255, 255, 0.18);
+}
+
+.heroJops .path-The-Page {
+  background-color: var(--main-50);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.heroJops .path-The-Page .breadcrumb {
+  margin-bottom: 0px;
+}
+
+.heroJops .bread-item a {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  leading-trim: NONE;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: var(--breadcrumb-muted) !important;
+  text-decoration: none;
+}
+
+.heroJops .breadcrumb .active {
+  color: var(--hero-title);
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  leading-trim: NONE;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+
+.heroslides {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.heroslides .swiper {
+  padding-bottom: 30px;
+}
+
+.heroslides .swiper .JoinSlid .container {
+  display: flex;
+  align-items: center;
+}
+
+.heroslides .swiper .JoinSlid .container .rights,
+.heroslides .swiper .JoinSlid .container .lefts {
+  width: 50%;
+}
+
+.heroslides .swiper .JoinSlid .container .lefts h2 {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 40px;
+  leading-trim: NONE;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: var(--text-dark);
+  max-width: 450px;
+}
+
+.heroslides .swiper .JoinSlid .container .lefts h2+p {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 22px;
+  leading-trim: NONE;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: var(--gray-300);
+  margin-bottom: 20px;
+  max-width: 740px;
+}
+
+.heroslides .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: none;
+  outline: 4px solid var(--footer-bg);
+}
+
+.heroslides .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+
+.heroslides .swiper .JoinSlid .container .lefts h2+p+button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: var(--text-dark);
+  padding: 10px 20px;
+  min-width: 260px;
+  background: none;
+  border: none;
+  border: 1px solid var(--categories-link);
+  border-radius: 15px;
+  position: relative;
+  transition: 0.4s;
+}
+
+.heroslides .swiper .JoinSlid .container .lefts h2+p+button svg {
+  transition: 0.4s;
+}
+
+.heroslides .swiper .JoinSlid .container .lefts h2+p+button:hover {
+  background: linear-gradient(to right, var(--main-500), var(--main-200));
+  transform: scale(1.02);
+  border: none;
+  box-shadow: 0 0 14px 0 var(--btn-glow);
+}
+
+.heroslides .swiper .JoinSlid .container .lefts h2+p+button:hover svg {
+  color: var(--color-white);
+  font-weight: bold;
+  transform: translateX(4px);
+}
+
+.heroslides .swiper .JoinSlid .container .lefts h2+p+button span svg {
+  color: var(--gray-200);
+  font-size: 24px;
+}
+
+.heroslides .swiper .JoinSlid .container .rights {
+  object-fit: cover;
+  width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media(max-width:992px) {
+  .heroslides .swiper .JoinSlid .container {
+    flex-direction: column-reverse;
+  }
+
+  .heroslides .swiper .JoinSlid .container .lefts h2 {
+    width: 100%;
+  }
+
+  .heroslides .swiper .JoinSlid .container .lefts h2+p {
+    width: 100%;
+  }
+
+  .heroslides .swiper .JoinSlid .container .lefts {
+    width: 100%;
+  }
+
+  .heroslides .swiper .JoinSlid .container .rights {
+    width: 60%;
+  }
+
+  .heroslides .swiper .JoinSlid .container .rights img {
+    margin-bottom: 15px;
+  }
+
+  .heroslides .swiper {
+    padding-bottom: 50px;
+  }
+
+  .heroslides {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+}
+
+@media(max-width:768px) {
+  .heroslides .swiper .JoinSlid .container .rights {
+    width: 70%;
+  }
+}
+
+.HeroJoinUs {
+  background-color: var(--main-50);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.HeroJoinUs .container {
+  position: relative;
+}
+
+.joinusgroup {
+  position: absolute;
+  width: 600px;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-70%);
+  z-index: -1;
+}
+
+.HeroJoinUs h3 {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 35px;
+  leading-trim: NONE;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: var(--hero-title);
+}
+
+.HeroJoinUs h3+p {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  leading-trim: NONE;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: var(--hero-desc);
+  max-width: 700px;
+  margin-bottom: 50px;
+}
+
+.HeroJoinUs .BigBox {
+  display: flex;
+  gap: 6px;
+}
+
+.HeroJoinUs .BigBox .contentBox {
+  padding: 15px;
+  text-align: center;
+  background-color: var(--color-white);
+}
+
+.HeroJoinUs .BigBox .contentBox div {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--categories-link);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+.HeroJoinUs .BigBox .contentBox div svg {
+  color: var(--color-white);
+  font-size: 20px;
+}
+
+.HeroJoinUs .BigBox .contentBox div+p {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: var(--join-title);
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.HeroJoinUs .BigBox .contentBox div+p+span {
+  color: var(--join-text);
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+@media(min-width:992px) {
+  .contentBox.contentBoxxx {
+    display: none;
+  }
+
+  .HeroJoinUs .BigBox .contentBox {
+    max-width: 300px;
+  }
+}
+
+@media(max-width:992px) and (min-width:768px) {
+  .HeroJoinUs .BigBox {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .contentBox.contentBoxxx {
+    min-width: 300px;
+    background: none !important;
+  }
+
+  .joinusgroup {
+    position: absolute;
+    width: 500px;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-80%);
+    z-index: -1;
+  }
+
+  .HeroJoinUs .BigBox .contentBox {
+    max-width: 300px;
+  }
+}
+
+@media(max-width:768px) {
+  .HeroJoinUs .BigBox {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .contentBox.contentBoxxx {
+    display: none;
+  }
+
+  .contentBox {
+    width: 100%;
+  }
+}
+
+@media(max-width:768px) {
+  .joinusgroup {
+    position: absolute;
+    width: 100%;
+    right: 0px;
+    top: 0%;
+    transform: translateY(0%);
+    z-index: -1;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .HeroJoinUs .BigBox {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+.perks-grid {
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+
+.perks-grid .container {
+  position: relative;
+}
+
+.perks-grid .container .row {
+  row-gap: 20px;
+}
+
+.perk-item {
+  text-align: center !important;
+  padding: 22px;
+  border-radius: 70px;
+  background: var(--perk-bg);
+  text-align: left;
+  transition: 0.4s;
+}
+
+.perk-item:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 0 14px 0px var(--perk-shadow);
+}
+
+.perk-item p {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 22px;
+  leading-trim: NONE;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: var(--hero-title);
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.perk-item span {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: var(--join-text);
+}
+
+.animation22 {
+  display: flex;
+  align-items: end;
+}
+
+.height {
+  height: 50px;
+}
+
+body[data-theme="dark"] .HeroJoinUs .BigBox .contentBox,
+body.dark .HeroJoinUs .BigBox .contentBox{
+  background-color: var(--app-surface);
+}

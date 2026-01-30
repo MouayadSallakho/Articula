@@ -1,0 +1,413 @@
+/* =========================
+   Tokens (THEME-AWARE)
+   Scoped to Edit Page
+========================= */
+.edit-article-page {
+  /* Theme tokens (from theme.css) */
+  --surface: var(--app-surface);
+  --surface-soft: var(--app-surface);
+  --text: var(--app-text);
+  --muted: var(--app-muted);
+
+  /* brand */
+  --primary: var(--brand-600);
+  --primary-rgb: 124, 84, 224; /* keep for rgba usage */
+
+  /* page accents */
+  --main-50: var(--brand-50);
+  --main-500: #8b5cf6;
+  --main-600: var(--brand-600);
+  --main-700: var(--brand-700);
+
+  --yellow-50: var(--yellow-50);
+
+  /* neutrals (derive from theme) */
+  --gray-600: var(--app-muted);
+  --gray-800: var(--app-text);
+
+  /* helpers */
+  --white-rgb: 255, 255, 255;
+  --overlay-rgb: 21, 21, 21;
+
+  /* shadows/borders from theme */
+  --shadow-soft: var(--shadow-soft);
+  --shadow-mid: var(--shadow-panel);
+
+  /* danger */
+  --danger-700: #b91c1c;
+  --danger-600: #dc2626;
+  --danger-500: #ef4444;
+  --danger-rgb: 239, 68, 68;
+
+  border-radius: 18px;
+  color: var(--text);
+}
+
+/* =========================
+   Top Bar
+========================= */
+.caTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.caTitle {
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+
+.caSubtle {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Back button */
+.edit-article-page .caBackBtn.btn {
+  border-radius: 14px;
+  font-weight: 900;
+  border: 1px solid rgba(var(--primary-rgb), 0.18);
+  color: var(--gray-600);
+  background: var(--surface);
+}
+
+.edit-article-page .caBackBtn.btn:hover {
+  background: var(--main-50);
+  border-color: rgba(var(--primary-rgb), 0.28);
+  color: var(--gray-800);
+}
+
+/* Outline button */
+.edit-article-page .caOutlineBtn.btn {
+  border-radius: 14px;
+  font-weight: 900;
+  border: 1px solid rgba(var(--primary-rgb), 0.22);
+  color: var(--primary);
+  background: var(--surface);
+}
+
+.edit-article-page .caOutlineBtn.btn:hover {
+  background: var(--main-50);
+  border-color: rgba(var(--primary-rgb), 0.3);
+}
+
+.edit-article-page .caOutlineSecondaryBtn.btn {
+  border-radius: 14px;
+  font-weight: 900;
+  border: 1px solid rgba(var(--primary-rgb), 0.18);
+  background: var(--surface);
+  color: var(--gray-600);
+}
+
+.edit-article-page .caOutlineSecondaryBtn.btn:hover {
+  background: var(--yellow-50);
+  border-color: rgba(var(--primary-rgb), 0.26);
+  color: var(--gray-800);
+}
+
+/* =========================
+   Card containers
+========================= */
+.caCard {
+  background: var(--surface);
+  border: 1px solid rgba(var(--primary-rgb), 0.14);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.caSideCard {
+  margin-bottom: 14px;
+}
+
+.caLoadingLine {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  color: var(--gray-600);
+}
+
+/* =========================
+   Form elements
+========================= */
+.caLabel {
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--gray-600);
+  margin-bottom: 6px;
+}
+
+.caControl.form-control,
+.caControl.form-select {
+  border-radius: 14px;
+  border: 1px solid rgba(var(--primary-rgb), 0.18);
+  background: var(--surface-soft);
+  color: var(--text);
+}
+
+.caControl.form-control:focus,
+.caControl.form-select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(var(--primary-rgb), 0.14);
+  border-color: rgba(var(--primary-rgb), 0.35);
+  background: var(--surface);
+}
+
+.caHint {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.caSectionTitle {
+  font-weight: 900;
+  color: var(--gray-600);
+}
+
+/* Tags box */
+.ca-tagsBox {
+  border: 1px solid rgba(var(--primary-rgb), 0.14);
+  background: var(--yellow-50);
+  border-radius: 16px;
+  padding: 10px 12px;
+  max-height: 190px;
+  overflow: auto;
+}
+
+.ca-tagsBox .form-check {
+  margin: 6px 0;
+}
+
+.ca-tagsBox .form-check-label {
+  color: var(--gray-600);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.ca-tagsBox input[type="checkbox"] {
+  accent-color: var(--primary);
+}
+
+/* Empty hint */
+.caEmptyHint {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================
+   Banner preview
+========================= */
+.caPreviewWrap {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(var(--primary-rgb), 0.14);
+  background: var(--main-50);
+}
+
+.caPreviewImg {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+}
+
+.caRemoveBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--white-rgb), 0.35);
+  background: rgba(var(--overlay-rgb), 0.55);
+  color: var(--surface);
+  font-size: 22px;
+  line-height: 30px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.caRemoveBtn:hover {
+  background: rgba(var(--overlay-rgb), 0.7);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Gallery
+========================= */
+.caGalleryTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.caClearBtn {
+  border: 0;
+  background: transparent;
+  font-weight: 900;
+  color: var(--danger-700);
+  cursor: pointer;
+}
+
+.caClearBtn:hover {
+  text-decoration: underline;
+}
+
+.caGalleryGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.caGalleryItem {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(var(--primary-rgb), 0.14);
+  background: var(--main-50);
+}
+
+.caGalleryImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.caGalleryRemove {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--danger-500);
+  color: var(--surface);
+  font-weight: 900;
+  cursor: pointer;
+  line-height: 26px;
+  box-shadow: 0 10px 20px rgba(var(--danger-rgb), 0.22);
+}
+
+.caGalleryRemove:hover {
+  background: var(--danger-600);
+}
+
+/* =========================
+   Submit button
+========================= */
+.edit-article-page .caSubmitBtn.btn {
+  border: 0;
+  border-radius: 16px;
+  font-weight: 900;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, var(--main-600), var(--main-500));
+  box-shadow: 0 12px 26px rgba(var(--primary-rgb), 0.22);
+}
+
+.edit-article-page .caSubmitBtn.btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--main-700), var(--main-600));
+  box-shadow: 0 16px 32px rgba(var(--primary-rgb), 0.26);
+  transform: translateY(-1px);
+}
+
+.edit-article-page .caSubmitBtn.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Toast
+========================= */
+.editToastWrap {
+  position: fixed !important;
+  top: 14px;
+  right: 14px;
+  z-index: 9999;
+}
+
+.editToast {
+  border-radius: 16px !important;
+  border: 1px solid rgba(var(--primary-rgb), 0.14) !important;
+  box-shadow: var(--shadow-mid);
+  overflow: hidden;
+}
+
+.editToast .toast-header {
+  background: linear-gradient(135deg, var(--main-50), var(--yellow-50));
+  border-bottom: 1px solid rgba(var(--primary-rgb), 0.1);
+}
+
+.editToast .toast-header strong {
+  font-weight: 900;
+  color: var(--gray-800);
+}
+
+.editToastBodyRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.editToastText {
+  font-weight: 800;
+  color: var(--gray-600);
+}
+
+.editToastBtns {
+  display: flex;
+  gap: 8px;
+}
+
+/* Alerts */
+.edit-article-page .alert-danger {
+  border-radius: 16px;
+  border-color: rgba(var(--danger-rgb), 0.22);
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+  .caCard {
+    border-radius: 16px;
+  }
+
+  .editToastWrap {
+    right: 10px;
+    left: 10px;
+  }
+}
+
+
+
+/* Dark mode: Toast should follow theme */
+body.dark .editToast,
+body[data-theme="dark"] .editToast {
+  background: var(--app-surface) !important;
+  border-color: var(--app-border) !important;
+}
+
+body.dark .editToast .toast-header,
+body[data-theme="dark"] .editToast .toast-header {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid var(--app-border) !important;
+}
+
+body.dark .editToast .toast-header strong,
+body[data-theme="dark"] .editToast .toast-header strong {
+  color: var(--app-text) !important;
+}
+
+body.dark .editToastText,
+body[data-theme="dark"] .editToastText {
+  color: var(--app-text) !important;
+}

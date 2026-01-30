@@ -13,7 +13,7 @@ import { IoEyeOff } from "react-icons/io5";
 
 import { AuthContext } from "../context/AuthContext";
 import LoginSuccessModal from "../components/LoginSuccessModal";
-import "./LogIn.css";
+import "./Login.css";
 
 function normalizeError(err) {
   if (!err) return "Unknown error";
